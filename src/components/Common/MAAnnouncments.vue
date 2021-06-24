@@ -3,12 +3,11 @@
 </template>
 
 <script>
-
 export default {
-  name: 'App',
-
-  data: () => ({
-    //
-  }),
-};
+  name: "MAAnnouncments"
+}
 </script>
+
+<style scoped>
+
+</style>

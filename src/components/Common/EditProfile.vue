@@ -3,12 +3,11 @@
 </template>
 
 <script>
-
 export default {
-  name: 'App',
-
-  data: () => ({
-    //
-  }),
-};
+  name: "EditProfile"
+}
 </script>
+
+<style scoped>
+
+</style>
