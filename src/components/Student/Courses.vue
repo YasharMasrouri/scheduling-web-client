@@ -7,7 +7,7 @@
 <script>
 import TheContainer from "../Common/TheContainer";
 export default {
-  name: "StudentCourses",
+  name: "Courses",
   components: {TheContainer}
 }
 </script>
