@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "AddAnnouncment"
+  name: "Announcements"
 }
 </script>
 
