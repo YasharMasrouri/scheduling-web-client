@@ -14,3 +14,13 @@ export default {
   }),
 };
 </script>
+
+<style lang="scss">
+@import "../public/dist/FontAwesome/css/all.css";
+
+*{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+</style>

@@ -8,7 +8,9 @@
       <div id="profile-content">
 
         <div id="content-dropdown">
-          <button></button>
+          <button id="dropdown-icon">
+            <i class="fas fa-caret-down"></i>
+          </button>
         </div>
 
         <div id="content-info">
@@ -39,6 +41,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "./../../../public/-variables";
 
 #header-container {
   width: 65%;
@@ -61,7 +64,19 @@ export default {
       height: 100%;
 
       #content-dropdown {
-        margin: 0 8px;
+        #dropdown-icon {
+          width: 35px;
+          height: 35px;
+          border: none;
+          border-radius: 50%;
+          color: $color-blue-btn;
+          @include flex-center;
+          background: transparent;
+          font-size: 15pt;
+        }
+        #dropdown-icon:hover {
+          background: #f3f3f3;
+        }
       }
 
       #content-info {
@@ -69,7 +84,7 @@ export default {
         flex-flow: column nowrap;
         justify-content: center;
         align-items: flex-end;
-        margin: 0 8px;
+        margin: 0 16px 0 8px;
 
         #info-name {
           font-size: 15pt;
