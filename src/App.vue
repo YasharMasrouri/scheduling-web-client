@@ -1,13 +1,12 @@
 <template>
-  <admin-page></admin-page>
+  <router-view></router-view>
 </template>
 
 <script>
 
-import AdminPage from "@/components/Admin/AdminPage";
 export default {
   name: 'App',
-  components: {AdminPage},
+
   data: () => ({
     //
   }),

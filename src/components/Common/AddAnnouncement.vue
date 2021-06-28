@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "SMList"
+  name: "AddAnnouncement"
 }
 </script>
 
