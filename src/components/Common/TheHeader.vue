@@ -6,17 +6,26 @@
     <div id="header-profile">
 
       <div id="profile-content">
-        <div id="content-dropdown">🔽</div>
+
+        <div id="content-dropdown">
+          <button></button>
+        </div>
+
         <div id="content-info">
           <label id="info-name">Jafar Tanha</label>
           <label id="info-ID">123456789</label>
         </div>
+
         <div id="content-image">
-          pic
+          <v-avatar>
+            <span>JT</span>
+          </v-avatar>
         </div>
+
       </div>
 
       <div id="profile-menu"></div>
+
 
     </div>
 
@@ -49,10 +58,12 @@ export default {
       flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
+      height: 100%;
 
       #content-dropdown {
         margin: 0 8px;
       }
+
       #content-info {
         display: flex;
         flex-flow: column nowrap;
@@ -63,20 +74,20 @@ export default {
         #info-name {
           font-size: 15pt;
         }
+
         #info-ID {
           font-size: 11pt;
         }
       }
-      #content-image {
 
+      #content-image {
+        background: red;
         border-radius: 50%;
-        background: gray;
-        margin: 0 8px;
+        color: white;
       }
     }
   }
 }
-
 
 
 </style>
