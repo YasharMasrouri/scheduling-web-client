@@ -1,7 +1,9 @@
 <template>
   <div id="header-container">
 
-    <div id="header-list">list</div>
+    <div id="header-list">
+      <slot></slot>
+    </div>
 
     <div id="header-profile">
 
