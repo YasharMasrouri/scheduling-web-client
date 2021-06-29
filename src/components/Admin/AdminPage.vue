@@ -2,7 +2,7 @@
   <the-header>
     // navs
   </the-header>
-  <router-view></router-view>
+<!--  <router-view></router-view>-->
 </template>
 
 <script>
