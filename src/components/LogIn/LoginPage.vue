@@ -5,7 +5,7 @@
         <v-col sm6 class="login">
           <div class="text-center">
             <h3 class="title pb-8">welcome back</h3>
-            <form class="text-center d-flex justify-center">
+            <form class="text-center">
               <v-text-field
                   color="#ED6038"
                   label="code"

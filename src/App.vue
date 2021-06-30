@@ -1,6 +1,6 @@
 <template>
-  <v-app class="#E3EFF6">
-      <router-view></router-view>
+  <v-app >
+      <router-view ></router-view>
   </v-app>
 
 </template>
