@@ -6,6 +6,7 @@
 
 <script>
 import TheContainer from "../Common/TheContainer";
+
 export default {
   name: "StudentHome",
   components: {TheContainer}

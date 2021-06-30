@@ -1,6 +1,5 @@
 <template>
   <the-container>
-
   </the-container>
 </template>
 
