@@ -3,7 +3,7 @@
     <div class="text-center">
     <v-card flat class="ma-3">
 
-      <v-responsive class="" >
+      <v-responsive >
         <div class="avatar">
         <v-avatar class="my-4" size="150">
           <img src="https://picsum.photos/id/11/500/300" />
@@ -18,11 +18,11 @@
         <div class="text-center headline black--text my-1">Role: Master</div>
       </v-card-text>
 
-      <v-card-action class="editBtns">
-
+      <v-card-action >
+<div class="editBtns">
         <EditName />
         <EditPassword />
-
+</div>
       </v-card-action>
       <v-file-input
           color="#ED6038"
