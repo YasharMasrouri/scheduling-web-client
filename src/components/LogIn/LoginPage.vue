@@ -30,10 +30,10 @@
           </div>
         </v-col>
         <v-divider inset vertical></v-divider>
-        <v-col sm6>
-          <!-- <v-responsive>
-  <img src="./pic1.png" alt="">
-   </v-responsive> -->
+        <v-col sm6 style="display: flex ; align-items: center ; justify-items: center">
+           <v-responsive style="width: auto" >
+              <img src="../../assets/LogIn.svg" alt="" style="width: 90%; margin-left: 25px">
+           </v-responsive>
         </v-col>
       </v-row>
     </div>
