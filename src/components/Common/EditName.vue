@@ -6,7 +6,7 @@
           rounded
           slot="activator"
           color="#ED6038"
-          class="editB text-capitalize white--text subtitle-1 mr-1 mt-3"
+          class="nameB text-capitalize white--text subtitle-1 mr-1 mt-3"
           v-bind="attrs"
           v-on="on"
       >Edit Name</v-btn>
@@ -25,6 +25,7 @@
       </v-card-text>
     </v-card>
   </v-dialog>
+
 </template>
 
 <script>
@@ -34,7 +35,7 @@ export default {
 </script>
 
 <style scoped>
-.editB {
+.nameB {
   width: 47%;
   color: white;
   margin-right: 3px;
