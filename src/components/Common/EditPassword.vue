@@ -6,7 +6,7 @@
           rounded
           slot="activator"
           color="#ED6038"
-          class="editB text-capitalize white--text subtitle-1 ml-1 mt-3"
+          class="passB text-capitalize white--text subtitle-1 ml-1 mt-3"
           v-bind="attrs"
           v-on="on"
       >Edit Password</v-btn
@@ -50,7 +50,7 @@ export default {
 
 <style scoped>
 
-.editB {
+.passB{
   width: 48%;
   color: white;
   margin-left: 3px;
