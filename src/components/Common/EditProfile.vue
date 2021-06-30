@@ -12,7 +12,7 @@
         </div>
       </v-responsive>
 
-      <v-card-text class="d-flex justify-center">
+      <v-card-text >
         <div class="text-center display-1 black--text mt-1">Name: Jafar Tanha</div>
         <div class="text-center headline black--text mt-1">Code:12345678</div>
         <div class="text-center headline black--text my-1">Role: Master</div>

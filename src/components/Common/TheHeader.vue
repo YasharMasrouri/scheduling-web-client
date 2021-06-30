@@ -1,5 +1,5 @@
 <template>
-  <div id="header-container">
+  <div id="header-container" style="background-color: #ffffff">
 
     <div id="header-list">
       <slot></slot>

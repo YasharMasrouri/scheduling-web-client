@@ -31,7 +31,6 @@
 
         <div class="scroll pa-4">
           <v-row>
-           <BellCourse/>
             <BellCourse/>
             <BellCourse/>
             <BellCourse/>
@@ -80,6 +79,7 @@ export default {
 .saveBtn{
   margin-top:15px;
   width: 20%;
+  height: 15%;
   color: white;
 
 }

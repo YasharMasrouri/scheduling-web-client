@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="fullpage">
     <the-header>
       <router-link to="/Master/Home">Home</router-link>
       <router-link to="/Master/Announcements">Announcements</router-link>
@@ -20,5 +20,13 @@ export default {
 </script>
 
 <style scoped>
+.fullpage{
+  background-color: #E3EFF6;
+  height: 100vh;
+  width: 100vw;
 
+  /*box-sizing: border-box;*/
+  /*-webkit-box-sizing: border-box;*/
+  /*-moz-box-sizing: border-box;*/
+}
 </style>
