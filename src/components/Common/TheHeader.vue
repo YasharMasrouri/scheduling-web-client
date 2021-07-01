@@ -16,8 +16,8 @@
         </div>
 
         <div id="content-info">
-          <label id="info-name">Jafar Tanha</label>
-          <label id="info-ID">123456789</label>
+          <label id="info-name">{{ name }}</label>
+          <label id="info-ID">{{ code }}</label>
         </div>
 
         <div id="content-image">
@@ -38,7 +38,14 @@
 
 <script>
 export default {
-  name: "TheHeader"
+  name: "TheHeader",
+  data() {
+    return {
+      code : this.$store.state.user.code,
+      name : this.$store.state.user.firstName + " " + this.$store.state.user.lastName,
+      image : this.$store.state.user.userImage
+    }
+  },
 }
 </script>
 
