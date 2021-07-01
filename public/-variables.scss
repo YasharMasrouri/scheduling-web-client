@@ -8,3 +8,14 @@ $color-background: #E3EFF6;
   justify-content: center;
   align-items: center;
 }
+@mixin page-container {
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+  'header'
+  'body';
+  grid-template-rows: 15% 85%;
+  grid-template-columns: 100%;
+  align-items: center;
+  background: $color-background;
+}

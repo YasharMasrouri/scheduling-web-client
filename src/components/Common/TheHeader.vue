@@ -56,7 +56,7 @@ export default {
 
 #header-container {
   width: 65%;
-  height: 81%;
+  height: 70%;
   border: none;
   border-radius: 50px;
   padding: 0 30px;
@@ -65,6 +65,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin: auto;
+  margin-bottom: 0;
 
   #header-list {
     //background: blue;
@@ -73,9 +74,6 @@ export default {
       text-decoration: none;
       margin: 26px;
       padding: 8px 0;
-    }
-    .the-header-list-item:first-of-type {
-      margin-left: 0;
     }
     .the-header-list-item:last-of-type {
       margin-right: 0;
