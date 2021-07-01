@@ -16,13 +16,15 @@
         </div>
 
         <div id="content-info">
-          <label id="info-name">{{ name }}</label>
-          <label id="info-ID">{{ code }}</label>
+<!--          <label id="info-name">{{ name }}</label>-->
+<!--          <label id="info-ID">{{ code }}</label>-->
+          <label id="info-name">Jafar Tanha</label>
+          <label id="info-ID">125478652</label>
         </div>
 
         <div id="content-image">
-          <v-avatar>
-            <span>JT</span>
+          <v-avatar size="60" color="red">
+            <img src="./../../assets/avatar-test.png">
           </v-avatar>
         </div>
 
@@ -55,7 +57,7 @@ export default {
 #header-container {
   width: 65%;
   height: 81%;
-  border: 1px solid black;
+  border: none;
   border-radius: 50px;
   padding: 0 30px;
   display: flex;
@@ -63,6 +65,31 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin: auto;
+
+  #header-list {
+    //background: blue;
+    .the-header-list-item {
+      color: black;
+      text-decoration: none;
+      margin: 26px;
+      padding: 8px 0;
+    }
+    .the-header-list-item:first-of-type {
+      margin-left: 0;
+    }
+    .the-header-list-item:last-of-type {
+      margin-right: 0;
+    }
+    .the-header-list-item:hover {
+      color: $color-orange-main;
+      border-bottom: 1px solid $color-orange-main;
+
+    }
+    .list-item-active {
+      color: $color-orange-main;
+      border-bottom: 1px solid $color-orange-main;
+    }
+  }
 
   #header-profile {
 
@@ -106,9 +133,6 @@ export default {
       }
 
       #content-image {
-        background: red;
-        border-radius: 50%;
-        color: white;
       }
     }
   }
