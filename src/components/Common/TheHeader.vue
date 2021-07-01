@@ -54,7 +54,7 @@ export default {
 
 #header-container {
   width: 65%;
-  height: 10%;
+  height: 81%;
   border: 1px solid black;
   border-radius: 50px;
   padding: 0 30px;
@@ -62,6 +62,7 @@ export default {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
 
   #header-profile {
 

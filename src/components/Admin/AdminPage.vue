@@ -1,13 +1,13 @@
 <template>
-  <div class="fullpage">
-    <the-header style="margin: 0 auto; margin-top: 25px">
+  <div id="admin-page-container">
+    <the-header>
       <router-link to="/Admin/Home">Home</router-link>
       <router-link to="/Admin/Data">Datas</router-link>
       <router-link to="/Admin/Students">Students</router-link>
       <router-link to="/Admin/Masters">Masters</router-link>
       <router-link to="/Admin/Announcements">Announcements</router-link>
     </the-header>
-    <router-view style="margin: 0 auto; margin-top: 35px"></router-view>
+    <router-view></router-view>
   </div>
 
 </template>
@@ -20,10 +20,18 @@ export default {
 }
 </script>
 
-<style scoped>
-.fullpage{
-  background-color: #E3EFF6;
+<style scoped lang="scss">
+@import "./../../../public/-variables";
+
+#admin-page-container {
   height: 100vh;
-  width: 100vw;
+  display: grid;
+  grid-template-areas:
+  'header'
+  'body';
+  grid-template-rows: 13% 87%;
+  grid-template-columns: 100%;
+  align-items: center;
 }
+
 </style>
