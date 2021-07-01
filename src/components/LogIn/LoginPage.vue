@@ -10,11 +10,14 @@
                   color="#ED6038"
                   label="code"
                   class="headline"
+                  v-model="code"
               ></v-text-field>
               <v-text-field
+                  type="password"
                   class="headline"
                   color="#ED6038"
                   label="password"
+                  v-model="password"
               ></v-text-field>
             </form>
             <div class="center">
@@ -23,6 +26,7 @@
                   elevation="1"
                   color="#ED6038"
                   class="loginBtn white--text text-capitalize font-weight-medium body-1 mt-3"
+                  @click="logIn"
               >Login Now</v-btn
               >
             </div>
@@ -42,7 +46,50 @@
 
 <script>
 export default {
-  name: "LoginPage"
+  name: "LoginPage",
+  data() {
+    return {
+      code : "",
+      password : null,
+      passwordIsFocoused : true,
+    }
+  },
+  methods :{
+    logIn() {
+      const sendingJson = JSON.stringify({
+        code : this.code,
+        password : this.password
+      })
+      fetch(this.$store.state.ServerUrl + "/api/Auth/Login" , {
+        method : "POST" ,
+        body : sendingJson
+      }).then(response => {
+        if (response.ok) {
+          return response.json()
+        }
+        else {
+          //password or code wrong
+        }
+      }).then(json => {
+        const state = {
+          token : json.token,
+          expireAt : json.expireAt,
+          user : {
+            firstName : json.user.firstName,
+            lastName : json.user.lastName,
+            id : json.user.id,
+            code : this.code,
+            password : this.password,
+            role : json.user.role,
+            userImage : json.user.image,
+          },
+        }
+        this.$store.dispatch('SetState' , state)
+        this.$router.push(`/${state.user.role}/Home`)
+      })
+
+    }
+  }
 }
 </script>
 
