@@ -94,19 +94,14 @@ export default {
   }
 
   #header-profile {
-    //display: flex;
-    //flex-flow: column nowrap;
-    //justify-content: center;
-    //align-items: center;
     position: absolute;
     top: 0;
     right: 0;
-
     padding: 0 30px 0 15px;
-    border: 1px solid black; // or none
     border-radius: 0 50px 50px;
     background: #ffffff;
-    //min-height: 100%;
+    //border: 1px solid black; // or none
+    border: none;
 
     #profile-content {
       @include flex-center;
@@ -143,12 +138,10 @@ export default {
         }
       }
 
-      #content-image {
-
-      }
     }
 
     #profile-list {
+      display: none; // toggle none and block
       .profile-list-item {
         width: 100%;
         padding: 16px 8px;
@@ -162,6 +155,9 @@ export default {
       .profile-list-icon {
         color: $color-orange-main;
         margin-right: 16px;
+      }
+      div:last-of-type {
+        margin-bottom: 16px;
       }
     }
   }

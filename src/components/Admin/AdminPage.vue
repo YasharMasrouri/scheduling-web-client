@@ -12,6 +12,8 @@
 <!--      <router-view></router-view>-->
       <admin-home></admin-home>
     </the-container>
+
+    <div id="admin-page-image"></div>
   </div>
 
 </template>
@@ -31,5 +33,10 @@ export default {
 
 #admin-page-container {
   @include page-container;
+
+  #admin-page-image {
+    background-image: url("./../../assets/StudentHome.svg");
+    @include page-image;
+  }
 }
 </style>
