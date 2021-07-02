@@ -7,31 +7,47 @@
 
     <div id="header-profile">
 
-      <div id="profile-content">
+<!--      <v-menu offset-y>-->
+<!--        <template v-slot:activator="{ on, attrs }">-->
+<!--          <v-btn v-bind="attrs" v-on="on" style="height: 100%">Dropdown</v-btn>-->
+<!--        </template>-->
+<!--        <v-list>-->
+<!--          <v-list-item style="width:400px">-->
+<!--            <v-list-item-title>title one</v-list-item-title>-->
+<!--          </v-list-item>-->
+<!--          <v-list-item>-->
+<!--            <v-list-item-title>title two</v-list-item-title>-->
+<!--          </v-list-item>-->
+<!--        </v-list>-->
+<!--      </v-menu>-->
 
+      <div id="profile-content">
         <div id="content-dropdown">
           <button id="dropdown-icon">
             <i class="fas fa-caret-down"></i>
           </button>
         </div>
-
         <div id="content-info">
 <!--          <label id="info-name">{{ name }}</label>-->
 <!--          <label id="info-ID">{{ code }}</label>-->
           <label id="info-name">Jafar Tanha</label>
           <label id="info-ID">125478652</label>
         </div>
-
         <div id="content-image">
           <v-avatar size="60" color="red">
             <img src="./../../assets/avatar-test.png">
           </v-avatar>
         </div>
-
       </div>
 
-      <div id="profile-menu"></div>
-
+      <div id="profile-list">
+        <div>
+          <button>don't do it</button>
+        </div>
+        <div>
+          <button>do it</button>
+        </div>
+      </div>
 
     </div>
 
@@ -48,6 +64,7 @@ export default {
       image : this.$store.state.user.userImage
     }
   },
+
 }
 </script>
 
@@ -59,13 +76,13 @@ export default {
   height: 70%;
   border: none;
   border-radius: 50px;
-  padding: 0 30px;
+  padding: 0 0 0 30px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  margin: auto;
-  margin-bottom: 0;
+  margin: auto auto 0 auto;
+  position: relative;
 
   #header-list {
     //background: blue;
@@ -90,12 +107,21 @@ export default {
   }
 
   #header-profile {
+    //display: flex;
+    //flex-flow: column nowrap;
+    //justify-content: center;
+    //align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    padding: 0 30px;
+    border: 1px solid black;
+    border-radius: 0 50px 50px;
+    background: #ffffff;
 
     #profile-content {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: center;
-      align-items: center;
+      @include flex-center;
       height: 100%;
 
       #content-dropdown {
