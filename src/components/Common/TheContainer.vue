@@ -1,5 +1,6 @@
 <template>
-  <div id="the-container" class="TheContainer pa-4 text-center d-flex">
+  <div id="the-container" >
+<!--    class="TheContainer pa-4 text-center d-flex"-->
     <slot></slot>
   </div>
 </template>
@@ -21,6 +22,7 @@ export default {
   background-color: #ffffff;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 //.TheContainer {
 //  border-radius: 30px;

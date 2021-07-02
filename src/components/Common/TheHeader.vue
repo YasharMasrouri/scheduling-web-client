@@ -7,20 +7,6 @@
 
     <div id="header-profile">
 
-<!--      <v-menu offset-y>-->
-<!--        <template v-slot:activator="{ on, attrs }">-->
-<!--          <v-btn v-bind="attrs" v-on="on" style="height: 100%">Dropdown</v-btn>-->
-<!--        </template>-->
-<!--        <v-list>-->
-<!--          <v-list-item style="width:400px">-->
-<!--            <v-list-item-title>title one</v-list-item-title>-->
-<!--          </v-list-item>-->
-<!--          <v-list-item>-->
-<!--            <v-list-item-title>title two</v-list-item-title>-->
-<!--          </v-list-item>-->
-<!--        </v-list>-->
-<!--      </v-menu>-->
-
       <div id="profile-content">
         <div id="content-dropdown">
           <button id="dropdown-icon">
@@ -40,6 +26,7 @@
         </div>
       </div>
 
+<!--      when this div is not displayed, id="header-profile" border is set to none-->
       <div id="profile-list">
         <div>
           <button class="profile-list-item"><i class="fas fa-cog profile-list-icon"></i>Edit Profile</button>

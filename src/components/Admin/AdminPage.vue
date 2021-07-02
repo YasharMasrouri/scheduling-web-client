@@ -9,7 +9,8 @@
     </the-header>
 <!--    <router-view></router-view>-->
     <the-container>
-      <router-view></router-view>
+<!--      <router-view></router-view>-->
+      <admin-home></admin-home>
     </the-container>
   </div>
 
@@ -18,9 +19,10 @@
 <script>
 import TheHeader from "../Common/TheHeader";
 import TheContainer from "@/components/Common/TheContainer";
+import AdminHome from "@/components/Admin/AdminHome";
 export default {
   name: "AdminPage",
-  components: {TheContainer, TheHeader}
+  components: {AdminHome, TheContainer, TheHeader}
 }
 </script>
 
