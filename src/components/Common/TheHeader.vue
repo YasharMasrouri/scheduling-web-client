@@ -42,10 +42,10 @@
 
       <div id="profile-list">
         <div>
-          <button>don't do it</button>
+          <button class="profile-list-item"><i class="fas fa-cog profile-list-icon"></i>Edit Profile</button>
         </div>
         <div>
-          <button>do it</button>
+          <button class="profile-list-item"><i class="far fa-sign-out profile-list-icon"></i>Log Out</button>
         </div>
       </div>
 
@@ -115,14 +115,15 @@ export default {
     top: 0;
     right: 0;
 
-    padding: 0 30px;
-    border: 1px solid black;
+    padding: 0 30px 0 15px;
+    border: 1px solid black; // or none
     border-radius: 0 50px 50px;
     background: #ffffff;
+    //min-height: 100%;
 
     #profile-content {
       @include flex-center;
-      height: 100%;
+      margin: 15px 0 ;
 
       #content-dropdown {
         #dropdown-icon {
@@ -150,13 +151,30 @@ export default {
         #info-name {
           font-size: 15pt;
         }
-
         #info-ID {
           font-size: 11pt;
         }
       }
 
       #content-image {
+
+      }
+    }
+
+    #profile-list {
+      .profile-list-item {
+        width: 100%;
+        padding: 16px 8px;
+        text-align: left;
+        border-top: 1px solid black;
+        font-size: 15pt;
+      }
+      .profile-list-item:hover {
+        font-weight: bold;
+      }
+      .profile-list-icon {
+        color: $color-orange-main;
+        margin-right: 16px;
       }
     }
   }
