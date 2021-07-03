@@ -87,13 +87,16 @@
         <td><button><i class="fal fa-angle-down"></i></button></td>
       </tr>
     </table>
+    <table-cell></table-cell>
+    <div id="admin-home-backdrop"></div>
   </div>
 </template>
 
 <script>
+import TableCell from "@/components/Admin/TableCell";
 export default {
   name: "AdminHome",
-  components: {}
+  components: {TableCell}
 }
 </script>
 
@@ -126,6 +129,10 @@ export default {
     button:hover {
       i {font-weight: bold;}
     }
+  }
+
+  #admin-home-backdrop {
+    @include page-backdrop;
   }
 }
 </style>
