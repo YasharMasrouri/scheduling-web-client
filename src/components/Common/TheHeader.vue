@@ -8,28 +8,33 @@
     <div id="header-profile">
 
       <div id="profile-content">
-
         <div id="content-dropdown">
           <button id="dropdown-icon">
             <i class="fas fa-caret-down"></i>
           </button>
         </div>
-
         <div id="content-info">
-          <label id="info-name">{{ name }}</label>
-          <label id="info-ID">{{ code }}</label>
+<!--          <label id="info-name">{{ name }}</label>-->
+<!--          <label id="info-ID">{{ code }}</label>-->
+          <label id="info-name">Jafar Tanha</label>
+          <label id="info-ID">125478652</label>
         </div>
-
         <div id="content-image">
-          <v-avatar>
-            <span>JT</span>
+          <v-avatar size="60" color="red">
+            <img src="./../../assets/avatar-test.png">
           </v-avatar>
         </div>
-
       </div>
 
-      <div id="profile-menu"></div>
-
+<!--      when this div is not displayed, id="header-profile" border is set to none-->
+      <div id="profile-list">
+        <div>
+          <button class="profile-list-item"><i class="fas fa-cog profile-list-icon"></i>Edit Profile</button>
+        </div>
+        <div>
+          <button class="profile-list-item"><i class="far fa-sign-out profile-list-icon"></i>Log Out</button>
+        </div>
+      </div>
 
     </div>
 
@@ -46,6 +51,7 @@ export default {
       image : this.$store.state.user.userImage
     }
   },
+
 }
 </script>
 
@@ -54,23 +60,52 @@ export default {
 
 #header-container {
   width: 65%;
-  height: 10%;
-  border: 1px solid black;
+  height: 70%;
+  border: none;
   border-radius: 50px;
-  padding: 0 30px;
+  padding: 0 0 0 30px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  margin: auto auto 0 auto;
+  position: relative;
+
+  #header-list {
+    //background: blue;
+    .the-header-list-item {
+      color: black;
+      text-decoration: none;
+      margin: 26px;
+      padding: 8px 0;
+    }
+    .the-header-list-item:last-of-type {
+      margin-right: 0;
+    }
+    .the-header-list-item:hover {
+      color: $color-orange-main;
+      border-bottom: 1px solid $color-orange-main;
+
+    }
+    .list-item-active {
+      color: $color-orange-main;
+      border-bottom: 1px solid $color-orange-main;
+    }
+  }
 
   #header-profile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 30px 0 15px;
+    border-radius: 0 50px 50px;
+    background: #ffffff;
+    //border: 1px solid black; // or none
+    border: none;
 
     #profile-content {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
+      @include flex-center;
+      margin: 15px 0 ;
 
       #content-dropdown {
         #dropdown-icon {
@@ -98,16 +133,31 @@ export default {
         #info-name {
           font-size: 15pt;
         }
-
         #info-ID {
           font-size: 11pt;
         }
       }
 
-      #content-image {
-        background: red;
-        border-radius: 50%;
-        color: white;
+    }
+
+    #profile-list {
+      display: none; // toggle none and block
+      .profile-list-item {
+        width: 100%;
+        padding: 16px 8px;
+        text-align: left;
+        border-top: 1px solid black;
+        font-size: 15pt;
+      }
+      .profile-list-item:hover {
+        font-weight: bold;
+      }
+      .profile-list-icon {
+        color: $color-orange-main;
+        margin-right: 16px;
+      }
+      div:last-of-type {
+        margin-bottom: 16px;
       }
     }
   }

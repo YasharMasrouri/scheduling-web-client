@@ -1,29 +1,42 @@
 <template>
-  <div class="fullpage">
-    <the-header style="margin: 0 auto; margin-top: 25px">
-      <router-link to="/Admin/Home">Home</router-link>
-      <router-link to="/Admin/Data">Datas</router-link>
-      <router-link to="/Admin/Students">Students</router-link>
-      <router-link to="/Admin/Masters">Masters</router-link>
-      <router-link to="/Admin/Announcements">Announcements</router-link>
+  <div id="admin-page-container">
+    <the-header>
+      <router-link class="the-header-list-item list-item-active" to="/Admin/Home">Home</router-link>
+      <router-link class="the-header-list-item" to="/Admin/Data">Datas</router-link>
+      <router-link class="the-header-list-item" to="/Admin/Students">Students</router-link>
+      <router-link class="the-header-list-item" to="/Admin/Masters">Masters</router-link>
+      <router-link class="the-header-list-item" to="/Admin/Announcements">Announcements</router-link>
     </the-header>
-    <router-view style="margin: 0 auto; margin-top: 35px"></router-view>
+<!--    <router-view></router-view>-->
+    <the-container>
+<!--      <router-view></router-view>-->
+      <admin-home></admin-home>
+    </the-container>
+
+    <div id="admin-page-image"></div>
   </div>
 
 </template>
 
 <script>
 import TheHeader from "../Common/TheHeader";
+import TheContainer from "@/components/Common/TheContainer";
+import AdminHome from "@/components/Admin/AdminHome";
 export default {
   name: "AdminPage",
-  components: {TheHeader}
+  components: {AdminHome, TheContainer, TheHeader}
 }
 </script>
 
-<style scoped>
-.fullpage{
-  background-color: #E3EFF6;
-  height: 100vh;
-  width: 100vw;
+<style scoped lang="scss">
+@import "./../../../public/-variables";
+
+#admin-page-container {
+  @include page-container;
+
+  #admin-page-image {
+    background-image: url("./../../assets/StudentHome.svg");
+    @include page-image;
+  }
 }
 </style>

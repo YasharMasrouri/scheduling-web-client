@@ -26,4 +26,5 @@ export default {
   -moz-box-sizing: border-box;
   
 }
+
 </style>
