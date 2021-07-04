@@ -12,6 +12,9 @@
       <button class="admin-student-buttons">Add One</button>
       <button class="admin-student-buttons">Add Multiple</button>
     </div>
+
+    <div id="admin-students-backdrop"></div>
+    <div id="admin-students-image"></div>
   </div>
 </template>
 
@@ -69,6 +72,15 @@ export default {
     .admin-student-buttons:hover {
       background: lighten($color-orange-main,5%);
     }
+  }
+
+  #admin-students-backdrop {
+    display: none; //none or block
+    @include page-backdrop;
+  }
+  #admin-students-image {
+    background-image: url("./../../assets/AdminStudents.svg");
+    @include page-image;
   }
 }
 @include scrollbar;
