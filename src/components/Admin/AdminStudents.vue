@@ -1,12 +1,12 @@
 <template>
   <div id="admin-students-container">
     <div class="students-list" id="students-list-left">
-      <list-item></list-item>
-      <list-item></list-item>
+      <list-item><label slot="name">Yashar Masrouri</label><label slot="id">123456789</label></list-item>
+      <list-item><label slot="name">Amin Farzane</label><label slot="id">993456789</label></list-item>
     </div>
     <div class="students-list" id="students-list-right">
-      <list-item></list-item>
-      <list-item></list-item>
+      <list-item><label slot="name">Mahdi Chavoshi</label><label slot="id">693456789</label></list-item>
+      <list-item><label slot="name">Bita Khashechian</label><label slot="id">853456700</label></list-item>
     </div>
     <div id="admin-students-buttons-div">
       <button class="admin-student-buttons">Add One</button>
@@ -29,7 +29,7 @@ export default {
 #admin-students-container {
   width: 100%;
   height: 100%;
-  padding: 32px 0;
+  padding: 64px 0 32px;
   display: grid;
   grid-template-areas:
   'left right'
@@ -40,7 +40,8 @@ export default {
   .students-list {
     width: 100%;
     height: 100%;
-    padding: 80px;
+    padding: 0 64px;
+    overflow-y: auto;
   }
   #students-list-left {
     grid-area: left;
@@ -65,6 +66,10 @@ export default {
       border-radius: 30px;
       width: 160px;
     }
+    .admin-student-buttons:hover {
+      background: lighten($color-orange-main,5%);
+    }
   }
 }
+@include scrollbar;
 </style>
