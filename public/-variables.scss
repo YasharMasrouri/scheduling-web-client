@@ -41,7 +41,7 @@ $color-background: #E3EFF6;
   background: black;
   opacity: 30%;
   z-index: 4;
-  @include flex-center;
+  //@include flex-center;
 }
 
 @mixin scrollbar {
