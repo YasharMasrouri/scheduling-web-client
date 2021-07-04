@@ -11,10 +11,10 @@
     <the-container>
 <!--      <router-view></router-view>-->
 <!--      <admin-home></admin-home>-->
-      <admin-data></admin-data>
+<!--      <admin-data></admin-data>-->
+      <admin-students></admin-students>
     </the-container>
 
-<!--    <div id="admin-page-image"></div>-->
   </div>
 
 </template>
@@ -22,10 +22,10 @@
 <script>
 import TheHeader from "../Common/TheHeader";
 import TheContainer from "@/components/Common/TheContainer";
-import AdminData from "@/components/Admin/AdminData";
+import AdminStudents from "@/components/Admin/AdminStudents";
 export default {
   name: "AdminPage",
-  components: {AdminData, TheContainer, TheHeader}
+  components: {AdminStudents, TheContainer, TheHeader}
 }
 </script>
 

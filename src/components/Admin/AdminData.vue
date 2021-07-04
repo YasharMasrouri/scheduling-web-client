@@ -30,7 +30,7 @@
     <button id="admin-data-generate">Generate Schedule</button>
 
 <!--    <add-course></add-course>-->
-    <add-day-bell></add-day-bell>
+<!--    <add-day-bell></add-day-bell>-->
     <div id="admin-data-backdrop"></div>
     <div id="admin-data-image"></div>
   </div>
@@ -38,10 +38,9 @@
 
 <script>
 import DataItem from "@/components/Admin/DataItem";
-import AddDayBell from "@/components/Admin/AddDayBell";
 export default {
   name: "AdminData",
-  components: {AddDayBell, DataItem}
+  components: {DataItem}
 }
 </script>
 
@@ -89,6 +88,8 @@ export default {
   }
   #admin-data-day {
     grid-area: day;
+    border-right: 1px solid;
+    border-left: 1px solid;
   }
   #admin-data-courses {
     grid-area: courses;
@@ -105,7 +106,7 @@ export default {
   }
 
   #admin-data-backdrop {
-    //display: none; //none or block
+    display: none; //none or block
     @include page-backdrop;
   }
   #admin-data-image {
