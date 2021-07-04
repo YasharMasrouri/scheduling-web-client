@@ -2,7 +2,7 @@
   <div id="data-item-container">
     <div id="data-item-edit"><button><i class="far fa-pen"></i></button></div>
     <div id="data-item-delete"><button><i class="far fa-trash"></i></button></div>
-    <div id="data-item-box"></div>
+    <div id="data-item-box"><p><slot></slot></p></div>
   </div>
 </template>
 
@@ -16,9 +16,12 @@ export default {
 @import "./../../../public/-variables";
 #data-item-container {
   height: 140px;
-  border: 1px solid black;
   margin: 32px;
   position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-end;
 
   #data-item-edit {
     width: 45px;
@@ -54,6 +57,23 @@ export default {
     }
     button:hover {
       background: lighten($color-orange-main,5%);
+    }
+  }
+  #data-item-box {
+    width: calc(100% - 40px);
+    height: calc(100% - 22px);
+    border: 2px solid $color-orange-main;
+    border-radius: 0 0 30px 30px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
     }
   }
 }

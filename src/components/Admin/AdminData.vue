@@ -4,26 +4,26 @@
     <div class="admin-data-column" id="admin-data-bells">
       <h3>Bells</h3>
       <div class="admin-data-column-content">
-        <data-item></data-item>
-        <data-item></data-item>
-        <data-item></data-item>
-        <data-item></data-item>
+        <data-item>4-5</data-item>
+        <data-item>5-6</data-item>
+        <data-item>6-7</data-item>
+        <data-item>7-8</data-item>
       </div>
       <button class="admin-data-add-btn">Add</button>
     </div>
     <div class="admin-data-column" id="admin-data-day">
       <h3>Day</h3>
       <div class="admin-data-column-content">
-        <data-item></data-item>
-        <data-item></data-item>
+        <data-item>Saturday</data-item>
+        <data-item>Monday</data-item>
       </div>
       <button class="admin-data-add-btn">Add</button>
     </div>
     <div class="admin-data-column" id="admin-data-courses">
       <h3>Courses</h3>
       <div class="admin-data-column-content">
-        <data-item></data-item>
-        <data-item></data-item>
+        <data-item>Maths</data-item>
+        <data-item>Algorithms</data-item>
       </div>
       <button class="admin-data-add-btn">Add</button>
     </div>
