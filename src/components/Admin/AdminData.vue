@@ -6,6 +6,8 @@
       <div class="admin-data-column-content">
         <data-item></data-item>
         <data-item></data-item>
+        <data-item></data-item>
+        <data-item></data-item>
       </div>
       <button class="admin-data-add-btn">Add</button>
     </div>
@@ -60,11 +62,13 @@ export default {
     display: grid;
     grid-template-rows: 0.7fr 6.3fr 1fr;
     text-align: center;
+    overflow-y: auto;
 
     .admin-data-column-content {
       height: 100%;
       width: 100%;
       padding: 8px;
+      overflow-y: auto;
     }
     .admin-data-add-btn {
       background: $color-orange-main;
@@ -106,4 +110,6 @@ export default {
     @include page-image;
   }
 }
+
+@include scrollbar
 </style>
