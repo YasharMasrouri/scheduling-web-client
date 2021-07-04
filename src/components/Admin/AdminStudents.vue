@@ -1,7 +1,11 @@
 <template>
   <div id="admin-students-container">
-    <div class="students-list" id="students-list-left"></div>
-    <div class="students-list" id="students-list-right"></div>
+    <div class="students-list" id="students-list-left">
+      <list-item></list-item>
+    </div>
+    <div class="students-list" id="students-list-right">
+
+    </div>
     <div id="admin-students-buttons-div">
       <button class="admin-student-buttons">Add One</button>
       <button class="admin-student-buttons">Add Multiple</button>
@@ -10,9 +14,10 @@
 </template>
 
 <script>
+import ListItem from "@/components/Admin/ListItem";
 export default {
   name: "AdminStudents",
-  components: {}
+  components: {ListItem}
 }
 </script>
 
@@ -31,10 +36,18 @@ export default {
   grid-template-columns: 1fr 1fr;
 
   .students-list {
-
+    width: 100%;
+    height: 100%;
+    padding: 80px;
   }
-  #students-list-left {grid-area: left}
-  #students-list-right {grid-area: right}
+  #students-list-left {
+    grid-area: left;
+    border-right: 1px solid $color-orange-main;
+  }
+  #students-list-right {
+    grid-area: right;
+    border-left: 1px solid $color-orange-main;
+  }
   #admin-students-buttons-div {
     grid-area: buttons;
     display: flex;
@@ -46,7 +59,7 @@ export default {
       background: $color-orange-main;
       color: white;
       padding: 0;
-      margin: 4px 8px;
+      margin: 8px 16px 0;
       border-radius: 30px;
       width: 160px;
     }
