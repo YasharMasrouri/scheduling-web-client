@@ -21,7 +21,51 @@ export default {
 
 #list-item-container {
   width: 100%;
-  height: 70px;
   border-bottom: 1px solid black;
+  padding: 8px 0;
+  margin: 16px 0;
+  display: grid;
+  grid-template-columns: 5fr 4fr 3fr;
+  align-content: center;
+
+  #list-item-name{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 15pt;
+  }
+  #list-item-id{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 15pt;
+  }
+  #list-item-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    button {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      color: white;
+    }
+    #list-item-edit {
+      background: $color-blue-btn;
+    }
+    #list-item-edit:hover {
+      background: lighten($color-blue-btn,5%);
+    }
+    #list-item-delete {
+      background: $color-orange-main;
+      margin-left: 8px;
+    }
+    #list-item-delete:hover {
+      background: lighten($color-orange-main,5%);
+    }
+  }
 }
 </style>

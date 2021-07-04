@@ -2,9 +2,11 @@
   <div id="admin-students-container">
     <div class="students-list" id="students-list-left">
       <list-item></list-item>
+      <list-item></list-item>
     </div>
     <div class="students-list" id="students-list-right">
-
+      <list-item></list-item>
+      <list-item></list-item>
     </div>
     <div id="admin-students-buttons-div">
       <button class="admin-student-buttons">Add One</button>
@@ -27,7 +29,7 @@ export default {
 #admin-students-container {
   width: 100%;
   height: 100%;
-  padding: 32px 64px;
+  padding: 32px 0;
   display: grid;
   grid-template-areas:
   'left right'
