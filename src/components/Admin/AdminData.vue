@@ -3,7 +3,7 @@
 
     <div class="admin-data-column" id="admin-data-bells">
       <h3>Bells</h3>
-      <div class="admin-data-column-content">
+      <div class="admin-data-column-content" id="admin-data-bells-conten">
         <data-item>4-5</data-item>
         <data-item>5-6</data-item>
         <data-item>6-7</data-item>
@@ -13,7 +13,7 @@
     </div>
     <div class="admin-data-column" id="admin-data-day">
       <h3>Day</h3>
-      <div class="admin-data-column-content">
+      <div class="admin-data-column-content" id="admin-data-day-content">
         <data-item>Saturday</data-item>
         <data-item>Monday</data-item>
       </div>
@@ -21,7 +21,7 @@
     </div>
     <div class="admin-data-column" id="admin-data-courses">
       <h3>Courses</h3>
-      <div class="admin-data-column-content">
+      <div class="admin-data-column-content" id="admin-data-courses-content">
         <data-item>Maths</data-item>
         <data-item>Algorithms</data-item>
       </div>
@@ -29,6 +29,7 @@
     </div>
     <button id="admin-data-generate">Generate Schedule</button>
 
+    <add-course></add-course>
     <div id="admin-data-backdrop"></div>
     <div id="admin-data-image"></div>
   </div>
@@ -36,9 +37,10 @@
 
 <script>
 import DataItem from "@/components/Admin/DataItem";
+import AddCourse from "@/components/Admin/AddCourse";
 export default {
   name: "AdminData",
-  components: {DataItem}
+  components: {AddCourse, DataItem}
 }
 </script>
 
@@ -67,7 +69,7 @@ export default {
     .admin-data-column-content {
       height: 100%;
       width: 100%;
-      padding: 8px;
+      padding: 8px 16px;
       overflow-y: auto;
     }
     .admin-data-add-btn {
@@ -102,7 +104,7 @@ export default {
   }
 
   #admin-data-backdrop {
-    display: none;
+    //display: none; //none or block
     @include page-backdrop;
   }
   #admin-data-image {

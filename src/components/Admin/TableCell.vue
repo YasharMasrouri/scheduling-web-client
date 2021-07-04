@@ -35,14 +35,7 @@ export default {
 
 
 #table-cell-container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  @include flex-center;
-
+  @include popup-container;
 
   #table-cell-box {
     width: 27%;
