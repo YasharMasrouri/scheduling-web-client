@@ -29,7 +29,8 @@
     </div>
     <button id="admin-data-generate">Generate Schedule</button>
 
-    <add-course></add-course>
+<!--    <add-course></add-course>-->
+    <add-day-bell></add-day-bell>
     <div id="admin-data-backdrop"></div>
     <div id="admin-data-image"></div>
   </div>
@@ -37,10 +38,10 @@
 
 <script>
 import DataItem from "@/components/Admin/DataItem";
-import AddCourse from "@/components/Admin/AddCourse";
+import AddDayBell from "@/components/Admin/AddDayBell";
 export default {
   name: "AdminData",
-  components: {AddCourse, DataItem}
+  components: {AddDayBell, DataItem}
 }
 </script>
 
