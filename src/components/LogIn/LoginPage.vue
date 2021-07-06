@@ -12,16 +12,19 @@
                   class="headline"
                   v-model="code"
               ></v-text-field>
-              <v-text-field
-                  type="password"
-                  class="headline"
-                  color="#ED6038"
-                  label="password"
-                  v-model="password"
-              ></v-text-field>
+
+                <v-text-field
+                    type="password"
+                    class="headline"
+                    color="#ED6038"
+                    label="password"
+                    v-model="password"
+                    append-icon="mdi-eye"
+                ></v-text-field>
             </form>
             <div class="center">
               <v-btn
+                  large
                   rounded
                   elevation="1"
                   color="#ED6038"
