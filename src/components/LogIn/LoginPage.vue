@@ -37,7 +37,7 @@
           </div>
         </v-col>
         <v-divider inset vertical></v-divider>
-        <v-col sm6 style="display: flex ; align-items: center ; justify-items: center">
+        <v-col id="imgCol" sm6 style="display: flex ; align-items: center ; justify-items: center">
            <v-responsive style="width: auto" >
               <img src="../../assets/LogIn.svg" alt="" style="width: 90%; margin-left: 25px">
            </v-responsive>
@@ -141,5 +141,11 @@ div.theContainer {
   justify-content: center;
   padding-top:5px;
 
+}
+
+#imgCol{
+  background-color:#E3EFF6;
+  background-clip: content-box;
+  padding-left: 0;
 }
 </style>
