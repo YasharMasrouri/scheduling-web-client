@@ -1,7 +1,10 @@
 <template>
+  <div>
   <the-container>
 
   </the-container>
+    <div id="student-page-image"></div>
+  </div>
 </template>
 
 <script>
@@ -13,6 +16,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "./../../../public/-variables";
+
+ #student-page-image{
+   background-image: url("./../../assets/StudentHome.svg");
+   @include page-image;
+ }
 
 </style>
