@@ -89,6 +89,7 @@
     </table>
     <table-cell></table-cell>
     <div id="admin-home-backdrop"></div>
+    <div id="admin-home-image"></div>
   </div>
 </template>
 
@@ -133,6 +134,11 @@ export default {
 
   #admin-home-backdrop {
     @include page-backdrop;
+  }
+
+  #admin-home-image {
+    background-image: url("./../../assets/StudentHome.svg");
+    @include page-image;
   }
 }
 </style>
