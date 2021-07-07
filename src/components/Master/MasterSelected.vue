@@ -1,5 +1,5 @@
 <template>
-  <the-container>
+ <div id="master-selected-container">
     <v-layout row class="layout ma-4">
 
       <v-col class="col" md6>
@@ -47,19 +47,26 @@
       </v-col>
 
     </v-layout>
-  </the-container>
+   <div id="master-selected-image"></div>
+ </div>
 </template>
 
 <script>
-import TheContainer from "../Common/TheContainer";
 import BellCourse from "./BellCourse";
 export default {
   name: "MasterSelected",
-  components: {TheContainer,BellCourse}
+  components: {BellCourse}
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import  "./../../../public/-variables";
+
+#master-selected-container{
+  width: 100%;
+  height: 100%;
+  @include flex-center;
+
 .col {
   height:80%;
   margin-top: 20px;
@@ -82,6 +89,10 @@ export default {
 .layout{
   padding-top:20px;
   padding-bottom:20px;
-
+}
+}
+#master-selected-image{
+  background-image: url("./../../assets/MasterSelected.svg");
+  @include page-image;
 }
 </style>
