@@ -44,7 +44,7 @@
       </v-col>
 
       <v-flex sm12 class="centerH ">
-        <v-btn rounded elevation="2" color="#ED6038" class="saveBtn white--text text-capitalize font-weight-medium body-1 ">save</v-btn>
+        <v-btn large rounded elevation="2" color="#ED6038" class="saveBtn white--text text-capitalize font-weight-regular subtitle-1 ">save</v-btn>
       </v-flex>
     </v-layout>
   </TheContainer>

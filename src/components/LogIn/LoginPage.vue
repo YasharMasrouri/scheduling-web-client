@@ -12,20 +12,24 @@
                   class="headline"
                   v-model="code"
               ></v-text-field>
-              <v-text-field
-                  type="password"
-                  class="headline"
-                  color="#ED6038"
-                  label="password"
-                  v-model="password"
-              ></v-text-field>
+
+                <v-text-field
+                    type="password"
+                    class="headline pass"
+                    color="#ED6038"
+                    label="password"
+                    v-model="password"
+                    append-icon="mdi-eye"
+                >
+                </v-text-field>
             </form>
             <div class="center">
               <v-btn
+                  large
                   rounded
                   elevation="1"
                   color="#ED6038"
-                  class="loginBtn white--text text-capitalize font-weight-medium body-1 mt-3"
+                  class="loginBtn white--text text-capitalize font-weight-regular subtitle-1 mt-3"
                   @click="logIn"
               >Login Now</v-btn
               >
@@ -34,7 +38,7 @@
           </div>
         </v-col>
         <v-divider inset vertical></v-divider>
-        <v-col sm6 style="display: flex ; align-items: center ; justify-items: center">
+        <v-col class="imgCol" sm6 style="display: flex ; align-items: center ; justify-items: center">
            <v-responsive style="width: auto" >
               <img src="../../assets/LogIn.svg" alt="" style="width: 90%; margin-left: 25px">
            </v-responsive>
@@ -139,4 +143,12 @@ div.theContainer {
   padding-top:5px;
 
 }
+
+.imgCol{
+  background-clip: content-box;
+  border-radius:0 38px 38px 0;
+  padding-left: 0;
+  background-color: #E3EFF6;
+}
+
 </style>
