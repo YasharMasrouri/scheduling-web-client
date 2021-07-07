@@ -1,11 +1,11 @@
 <template>
-  <TheContainer >
+  <div id="editProfile-container">
     <div class="text-center">
     <v-card flat class="ma-3">
 
-      <v-responsive >
+      <v-responsive>
         <div class="avatar">
-        <v-avatar class="my-4" size="150">
+        <v-avatar class="my-4" size="200">
           <img src="https://picsum.photos/id/11/500/300" />
         </v-avatar>
 
@@ -31,36 +31,44 @@
       ></v-file-input>
     </v-card>
     </div>
-  </TheContainer>
+  </div>
 </template>
 
 <script>
-import TheContainer from "./TheContainer";
 import EditName from "./EditName";
 import EditPassword from "./EditPassword";
 export default {
   name: "EditProfile",
   components: {
-    TheContainer,
     EditName,
     EditPassword
   },
 }
 </script>
 
-<style scoped>
-.text-center{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.avatar{
-  display: flex;
-  justify-content: center;
+<style scoped lang="scss">
+@import "./../../../public/-variables";
+#editProfile-container {
+  width: 100%;
+  height: 100%;
+  @include flex-center;
+
+  .text-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25vw;
+  }
+
+  .avatar {
+    display: flex;
+    justify-content: center;
+  }
+
+  .editBtns {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-.editBtns{
-  display: flex;
-  justify-content: center;
-}
 </style>

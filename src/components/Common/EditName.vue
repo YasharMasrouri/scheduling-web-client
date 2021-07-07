@@ -1,12 +1,12 @@
 <template>
-  <v-dialog class="dialog" max-width="400px">
+  <v-dialog class="dialog" max-width="500px">
     <template v-slot:activator="{ on, attrs }">
       <v-btn
           large
           rounded
           slot="activator"
           color="#ED6038"
-          class="nameB text-capitalize white--text subtitle-1 mr-1 mt-3"
+          class="nameB text-capitalize white--text subtitle-1  mr-1 mt-3"
           v-bind="attrs"
           v-on="on"
       >Edit Name</v-btn>
