@@ -29,7 +29,7 @@
                   rounded
                   elevation="1"
                   color="#ED6038"
-                  class="loginBtn white--text text-capitalize font-weight-regular subtitle-1 mt-3"
+                  class="loginBtn white--text text-capitalize subtitle-1 mt-3"
                   @click="logIn"
               >Login Now</v-btn
               >
