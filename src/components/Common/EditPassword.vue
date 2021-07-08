@@ -9,7 +9,8 @@
           class="passB text-capitalize white--text subtitle-1 ml-1 mt-3"
           v-bind="attrs"
           v-on="on"
-      >Edit Password</v-btn
+      >Edit Password
+      </v-btn
       >
     </template>
 
@@ -24,7 +25,7 @@
           <v-text-field
               color="#ED6038"
               label="new password"
-              type="password" ></v-text-field>
+              type="password"></v-text-field>
 
           <v-text-field
               color="#ED6038"
@@ -34,7 +35,8 @@
           <v-btn
               color="#ED6038"
               class="saveBtn white--text text-capitalize"
-              rounded>Save</v-btn>
+              rounded>Save
+          </v-btn>
 
         </v-form>
       </v-card-text>
@@ -50,7 +52,7 @@ export default {
 
 <style scoped>
 
-.passB{
+.passB {
   width: 48%;
   color: white;
   margin-left: 3px;

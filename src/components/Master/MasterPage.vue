@@ -9,7 +9,8 @@
 <!--    <router-view style="margin: 0 auto; margin-top: 35px"></router-view>-->
 
     <the-container>
-<master-adapt-schedule></master-adapt-schedule>
+      <edit-profile></edit-profile>
+<!--<master-adapt-schedule></master-adapt-schedule>-->
 <!--      <master-selected></master-selected>-->
 <!--      <master-home></master-home>-->
     </the-container>
@@ -21,14 +22,16 @@
 import TheHeader from "../Common/TheHeader";
 import TheContainer from "../Common/TheContainer";
 // import MasterHome from "./MasterHome";
-import MasterAdaptSchedule from "./MasterAdaptSchedule";
+// import MasterAdaptSchedule from "./MasterAdaptSchedule";
+import EditProfile from "../Common/EditProfile";
 // import MasterSelected from "./MasterSelected";
 export default {
   name: "MasterPage",
   components: {
+    EditProfile,
     // MasterHome,
     // MasterSelected,
-    MasterAdaptSchedule,
+    // MasterAdaptSchedule,
     TheContainer, TheHeader}
 }
 </script>

@@ -16,15 +16,15 @@ export default {
 <style scoped lang="scss">
 @import "./../../../public/-variables";
 
-#student-home-container{
+#student-home-container {
   width: 100%;
   height: 100%;
   @include flex-center;
 }
 
- #student-home-image{
-   background-image: url("./../../assets/StudentHome.svg");
-   @include page-image;
- }
+#student-home-image {
+  background-image: url("./../../assets/StudentHome.svg");
+  @include page-image;
+}
 
 </style>

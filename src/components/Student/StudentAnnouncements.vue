@@ -28,7 +28,8 @@ export default {
 
 <style scoped lang="scss">
 @import "./../../../public/-variables";
-#student-announce-container{
+
+#student-announce-container {
   width: 100%;
   height: 100%;
   @include flex-center;
@@ -38,7 +39,7 @@ export default {
     height: 100%;
     display: grid;
     grid-template-areas: 'search' 'middle';
-    grid-template-rows: 15% 85% ;
+    grid-template-rows: 15% 85%;
     grid-template-columns: 100%;
     align-items: center;
   }
@@ -77,7 +78,7 @@ export default {
   }
 }
 
-#student-announce-image{
+#student-announce-image {
   background-image: url("./../../assets/Announcements.svg");
   @include page-image;
 }

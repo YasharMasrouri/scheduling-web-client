@@ -2,16 +2,16 @@
   <div id="student-page-container">
     <the-header>
       <router-link class="the-header-list-item " to="/Student/Home">Home</router-link>
-      <router-link  class="the-header-list-item " to="/Student/Announcements">Announcements</router-link>
-      <router-link  class="the-header-list-item " to="/Student/Courses">Courses</router-link>
-      <router-link  class="the-header-list-item " to="/Student/SelectedCourses">SelectedCourses</router-link>
+      <router-link class="the-header-list-item " to="/Student/Announcements">Announcements</router-link>
+      <router-link class="the-header-list-item " to="/Student/Courses">Courses</router-link>
+      <router-link class="the-header-list-item " to="/Student/SelectedCourses">SelectedCourses</router-link>
     </the-header>
-<!--    <router-view style="margin: 0 auto; margin-top: 35px"></router-view>-->
+    <!--    <router-view style="margin: 0 auto; margin-top: 35px"></router-view>-->
 
     <the-container>
-<!--<student-home></student-home>-->
-<!--<student-selected></student-selected>-->
-<!-- <student-course-select></student-course-select>-->
+      <!--<student-home></student-home>-->
+      <!--<student-selected></student-selected>-->
+      <!-- <student-course-select></student-course-select>-->
       <student-announcements></student-announcements>
     </the-container>
 
@@ -26,6 +26,7 @@ import TheHeader from "../Common/TheHeader";
 // import StudentCourseSelect from "./StudentCourseSelect";
 // import StudentSelected from "./StudentSelected";
 import StudentAnnouncements from "./StudentAnnouncements";
+
 export default {
   name: "StudentPage",
   components: {
@@ -34,7 +35,7 @@ export default {
     // StudentSelected,
     // StudentCourseSelect,
 
-    TheContainer ,
+    TheContainer,
     TheHeader,
   }
 }

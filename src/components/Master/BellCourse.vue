@@ -1,6 +1,6 @@
 <template>
   <div class="cards py-0">
-    <v-card  outlined shaped class="centerH margin ma-3">
+    <v-card outlined shaped class="centerH margin ma-3">
       <v-card-text class=" py-0">
         <p class="text-body-1 black--text mb-0 mt-1">
           shanbe
@@ -22,19 +22,19 @@ export default {
 </script>
 
 <style scoped>
-.cards{
+.cards {
   width: 50%;
   display: grid;
   justify-content: space-evenly;
 
 }
 
-.centerH{
+.centerH {
   display: flex;
   justify-content: center;
 }
 
-.margin{
+.margin {
   margin: 10px;
 }
 

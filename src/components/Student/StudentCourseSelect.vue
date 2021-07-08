@@ -13,33 +13,37 @@
       <middle class="scroll">
         <div class="pl-5">
           <v-row>
-            <Courses />
-            <Courses />
-            <Courses />
-            <Courses />
-            <Courses />
-            <Courses />
-            <Courses />
-            <Courses />
-            <Courses />
-            <Courses />
+            <Courses/>
+            <Courses/>
+            <Courses/>
+            <Courses/>
+            <Courses/>
+            <Courses/>
+            <Courses/>
+            <Courses/>
+            <Courses/>
+            <Courses/>
 
 
           </v-row>
         </div>
       </middle>
-      <btn class="text-center"> <v-btn large rounded elevation="2" color="#ED6038" class="saveBtn white--text text-capitalize text-h5">save</v-btn></btn>
+      <btn class="text-center">
+        <v-btn large rounded elevation="2" color="#ED6038" class="saveBtn white--text text-capitalize text-h5">save
+        </v-btn>
+      </btn>
     </div>
 
-  <div id="student-page-image"></div>
+    <div id="student-page-image"></div>
   </div>
 </template>
 
 <script>
 import Courses from "@/components/Student/Courses";
+
 export default {
   name: "StudentCourseSelect",
-  components: {Courses, }
+  components: {Courses,}
 }
 </script>
 
@@ -100,7 +104,7 @@ export default {
   }
 }
 
-#student-page-image{
+#student-page-image {
   background-image: url("./../../assets/StudentCourses.svg");
   @include page-image;
 }

@@ -9,14 +9,14 @@
 
         <div class="scroll pa-4">
           <v-row>
-            <BellCourse />
-            <BellCourse />
-            <BellCourse />
-            <BellCourse />
-            <BellCourse />
-            <BellCourse />
-            <BellCourse />
-            <BellCourse />
+            <BellCourse/>
+            <BellCourse/>
+            <BellCourse/>
+            <BellCourse/>
+            <BellCourse/>
+            <BellCourse/>
+            <BellCourse/>
+            <BellCourse/>
 
           </v-row>
         </div>
@@ -47,7 +47,9 @@
       </v-col>
 
       <v-flex sm12 class="centerH ">
-        <v-btn large rounded elevation="2" color="#ED6038" class="saveBtn white--text text-capitalize font-weight-regular subtitle-1 ">save</v-btn>
+        <v-btn large rounded elevation="2" color="#ED6038"
+               class="saveBtn white--text text-capitalize font-weight-regular subtitle-1 ">save
+        </v-btn>
       </v-flex>
     </v-layout>
 
@@ -58,6 +60,7 @@
 
 <script>
 import BellCourse from "./BellCourse";
+
 export default {
   name: "MasterAdaptSchedule",
   components: {BellCourse},
@@ -73,52 +76,52 @@ export default {
   height: 100%;
   @include flex-center;
 
-.col {
-  height: 80%;
-  margin-top: 20px;
-}
-
-.scroll {
-  height: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  margin-top: 20px;
-  padding: 10px;
-}
-
-
-.saveBtn {
-  margin-top: 15px;
-  width: 20%;
-  height: 100%;
-  color: white;
-}
-
-.centerH {
-  display: flex;
-  justify-content: center;
-}
-
-.centerV {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.layout {
-  padding-top: 20px;
-  height: 90%;
-  width: 100%;
-}
-
-.margin {
-  margin: 10px;
-}
-}
-
-  #master-schedule-image {
-    background-image: url("./../../assets/MasterAdaptSchedule.svg");
-    @include page-image;
+  .col {
+    height: 80%;
+    margin-top: 20px;
   }
+
+  .scroll {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+
+  .saveBtn {
+    margin-top: 15px;
+    width: 20%;
+    height: 100%;
+    color: white;
+  }
+
+  .centerH {
+    display: flex;
+    justify-content: center;
+  }
+
+  .centerV {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .layout {
+    padding-top: 20px;
+    height: 90%;
+    width: 100%;
+  }
+
+  .margin {
+    margin: 10px;
+  }
+}
+
+#master-schedule-image {
+  background-image: url("./../../assets/MasterAdaptSchedule.svg");
+  @include page-image;
+}
 
 </style>

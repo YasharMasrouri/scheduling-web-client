@@ -9,7 +9,8 @@
           class="nameB text-capitalize white--text subtitle-1  mr-1 mt-3"
           v-bind="attrs"
           v-on="on"
-      >Edit Name</v-btn>
+      >Edit Name
+      </v-btn>
     </template>
 
     <v-card flat class="text-center pt-3">
@@ -19,7 +20,8 @@
           <v-btn
               color="#ED6038"
               class="saveBtn white--text text-capitalize "
-              rounded>Save</v-btn>
+              rounded>Save
+          </v-btn>
 
         </v-form>
       </v-card-text>

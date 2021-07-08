@@ -1,23 +1,23 @@
 <template>
   <div id="student-selected-container">
-      <middle class="scroll">
-        <div class="pl-5">
-          <v-row>
-            <Courses />
-            <Courses />
-            <Courses />
-            <Courses />
-            <Courses />
-            <Courses />
-            <Courses />
-            <Courses />
-            <Courses />
-            <Courses />
+    <middle class="scroll">
+      <div class="pl-5">
+        <v-row>
+          <Courses/>
+          <Courses/>
+          <Courses/>
+          <Courses/>
+          <Courses/>
+          <Courses/>
+          <Courses/>
+          <Courses/>
+          <Courses/>
+          <Courses/>
 
 
-          </v-row>
-        </div>
-      </middle>
+        </v-row>
+      </div>
+    </middle>
 
     <div id="student-selected-image"></div>
   </div>
@@ -26,6 +26,7 @@
 
 <script>
 import Courses from "./Courses";
+
 export default {
   name: "StudentSelected",
   components: {Courses}
@@ -50,7 +51,7 @@ export default {
   }
 }
 
-#student-selected-image{
+#student-selected-image {
   background-image: url("./../../assets/StudentSelectedCourses.svg");
   @include page-image;
 }

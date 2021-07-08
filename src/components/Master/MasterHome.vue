@@ -14,14 +14,15 @@ export default {
 
 <style scoped lang="scss">
 @import "./../../../public/-variables";
-#master-home-container{
+
+#master-home-container {
   width: 100%;
   height: 100%;
   @include flex-center;
 
 }
 
-#master-home-image{
+#master-home-image {
   background-image: url("./../../assets/MasterHome.svg");
   @include page-image;
 }
