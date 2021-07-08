@@ -13,6 +13,7 @@
       <button class="admin-student-buttons">Add Multiple</button>
     </div>
 
+    <add-one></add-one>
     <div id="admin-students-backdrop"></div>
     <div id="admin-students-image"></div>
   </div>
@@ -20,9 +21,10 @@
 
 <script>
 import ListItem from "@/components/Admin/ListItem";
+import AddOne from "@/components/Admin/AddOne";
 export default {
   name: "AdminStudents",
-  components: {ListItem}
+  components: {AddOne, ListItem}
 }
 </script>
 
@@ -75,7 +77,7 @@ export default {
   }
 
   #admin-students-backdrop {
-    display: none; //none or block
+    display: block; //none or block
     @include page-backdrop;
   }
   #admin-students-image {
