@@ -1,27 +1,30 @@
 <template>
-  <div>
-  <the-container>
+  <div id="student-home-container">
 
-  </the-container>
-    <div id="student-page-image"></div>
+    <div id="student-home-image"></div>
   </div>
 </template>
 
 <script>
-import TheContainer from "../Common/TheContainer";
 
 export default {
   name: "StudentHome",
-  components: {TheContainer}
+  components: {}
 }
 </script>
 
 <style scoped lang="scss">
 @import "./../../../public/-variables";
 
- #student-page-image{
-   background-image: url("./../../assets/StudentHome.svg");
-   @include page-image;
- }
+#student-home-container {
+  width: 100%;
+  height: 100%;
+  @include flex-center;
+}
+
+#student-home-image {
+  background-image: url("./../../assets/StudentHome.svg");
+  @include page-image;
+}
 
 </style>

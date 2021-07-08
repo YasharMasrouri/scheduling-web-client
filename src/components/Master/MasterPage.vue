@@ -1,29 +1,46 @@
 <template>
-  <div class="fullpage">
-    <the-header style="margin: 0 auto; margin-top: 25px" >
-      <router-link to="/Master/Home">Home</router-link>
-      <router-link to="/Master/Announcements">Announcements</router-link>
-      <router-link to="/Master/AdaptSchedule">AdaptSchedule</router-link>
-      <router-link to="/Master/SelectedSchedule">SelectedSchedule</router-link>
+  <div id="master-page-container">
+    <the-header>
+      <router-link class="the-header-list-item"  to="/Master/Home">Home</router-link>
+      <router-link class="the-header-list-item"  to="/Master/Announcements">Announcements</router-link>
+      <router-link class="the-header-list-item"  to="/Master/AdaptSchedule">AdaptSchedule</router-link>
+      <router-link class="the-header-list-item"  to="/Master/SelectedSchedule">SelectedSchedule</router-link>
     </the-header>
-    <router-view style="margin: 0 auto; margin-top: 35px"></router-view>
+<!--    <router-view style="margin: 0 auto; margin-top: 35px"></router-view>-->
+
+    <the-container>
+      <edit-profile></edit-profile>
+<!--<master-adapt-schedule></master-adapt-schedule>-->
+<!--      <master-selected></master-selected>-->
+<!--      <master-home></master-home>-->
+    </the-container>
   </div>
 
 </template>
 
 <script>
 import TheHeader from "../Common/TheHeader";
+import TheContainer from "../Common/TheContainer";
+// import MasterHome from "./MasterHome";
+// import MasterAdaptSchedule from "./MasterAdaptSchedule";
+import EditProfile from "../Common/EditProfile";
+// import MasterSelected from "./MasterSelected";
 export default {
   name: "MasterPage",
-  components: {TheHeader}
+  components: {
+    EditProfile,
+    // MasterHome,
+    // MasterSelected,
+    // MasterAdaptSchedule,
+    TheContainer, TheHeader}
 }
 </script>
 
-<style scoped>
-.fullpage{
-  background-color: #E3EFF6;
-  height: 100vh;
-  width: 100vw;
+<style scoped lang="scss">
+@import "./../../../public/-variables";
+
+#master-page-container {
+  @include page-container;
 
 }
 </style>
