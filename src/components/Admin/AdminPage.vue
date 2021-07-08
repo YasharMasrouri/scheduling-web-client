@@ -12,7 +12,8 @@
 <!--      <router-view></router-view>-->
 <!--      <admin-home></admin-home>-->
 <!--      <admin-data></admin-data>-->
-      <admin-students></admin-students>
+<!--      <admin-students></admin-students>-->
+      <admin-masters></admin-masters>
     </the-container>
 
   </div>
@@ -22,10 +23,10 @@
 <script>
 import TheHeader from "../Common/TheHeader";
 import TheContainer from "@/components/Common/TheContainer";
-import AdminStudents from "@/components/Admin/AdminStudents";
+import AdminMasters from "@/components/Admin/AdminMasters";
 export default {
   name: "AdminPage",
-  components: {AdminStudents, TheContainer, TheHeader}
+  components: {AdminMasters, TheContainer, TheHeader}
 }
 </script>
 
@@ -35,9 +36,5 @@ export default {
 #admin-page-container {
   @include page-container;
 
-  #admin-page-image {
-    background-image: url("./../../assets/StudentHome.svg");
-    @include page-image;
-  }
 }
 </style>
