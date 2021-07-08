@@ -14,7 +14,8 @@
 <!--      <admin-data></admin-data>-->
 <!--      <admin-students></admin-students>-->
 <!--      <admin-masters></admin-masters>-->
-      <m-a-announcements></m-a-announcements>
+<!--      <m-a-announcements></m-a-announcements>-->
+      <edit-profile></edit-profile>
     </the-container>
 
   </div>
@@ -24,10 +25,10 @@
 <script>
 import TheHeader from "../Common/TheHeader";
 import TheContainer from "@/components/Common/TheContainer";
-import MAAnnouncements from "@/components/Common/MAAnnouncements";
+import EditProfile from "@/components/Common/EditProfile";
 export default {
   name: "AdminPage",
-  components: {MAAnnouncements, TheContainer, TheHeader}
+  components: {EditProfile, TheContainer, TheHeader}
 }
 </script>
 

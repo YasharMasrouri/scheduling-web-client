@@ -29,7 +29,7 @@
       <button id="m-a-announcements-btn">Add Announcement</button>
     </div>
 
-    <add-announcement></add-announcement>
+<!--    <add-announcement></add-announcement>-->
 
     <div id="m-a-announcements-backdrop"></div>
     <div id="m-a-announcements-image"></div>
@@ -38,11 +38,10 @@
 
 <script>
 import Announcements from "@/components/Common/Announcements";
-import AddAnnouncement from "@/components/Common/AddAnnouncement";
 
 export default {
   name: "MAAnnouncements",
-  components: {AddAnnouncement, Announcements}
+  components: {Announcements}
 }
 </script>
 
@@ -79,7 +78,7 @@ export default {
   }
 
   #m-a-announcements-backdrop {
-    display: block; //none or block
+    display: none; //none or block
     @include page-backdrop;
   }
   #m-a-announcements-image {
