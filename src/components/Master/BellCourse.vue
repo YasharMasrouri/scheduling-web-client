@@ -1,6 +1,6 @@
 <template>
-  <div class="cards py-0">
-    <v-card outlined shaped class="centerH margin ma-3">
+  <div class="bellCourse py-0">
+    <v-card outlined shaped class="card margin ma-3">
       <v-card-text class=" py-0">
         <p class="text-body-1 black--text mb-0 mt-1">
           shanbe
@@ -22,16 +22,19 @@ export default {
 </script>
 
 <style scoped>
-.cards {
+.bellCourse{
   width: 50%;
   display: grid;
   justify-content: space-evenly;
 
 }
 
-.centerH {
+.card{
   display: flex;
   justify-content: center;
+  border: 1px solid #ED6038;
+  width: 100%;
+  height: 80%;
 }
 
 .margin {

@@ -117,6 +117,7 @@ export default {
 
   .saveBtn {
     margin-top: 15px;
+    margin-bottom: 15px;
     width: 15%;
   }
 
