@@ -3,45 +3,145 @@
 
     <div class="admin-data-column" id="admin-data-bells">
       <h3>Bells</h3>
-      <div class="admin-data-column-content" id="admin-data-bells-conten">
-        <data-item>4-5</data-item>
-        <data-item>5-6</data-item>
-        <data-item>6-7</data-item>
-        <data-item>7-8</data-item>
+      <div class="admin-data-column-content" id="admin-data-bells-content">
+        <data-item v-for="bell in bells" :key="bell" @edit="editBell(bell)" @delet="deleteBell(bell)">{{ bell }}</data-item>
       </div>
-      <button class="admin-data-add-btn">Add</button>
+      <button class="admin-data-add-btn" @click="addDay">Add</button>
     </div>
     <div class="admin-data-column" id="admin-data-day">
       <h3>Day</h3>
       <div class="admin-data-column-content" id="admin-data-day-content">
-        <data-item>Saturday</data-item>
-        <data-item>Monday</data-item>
+        <data-item v-for="day in days" :key="day" @edit="editDay(day)" @delet="deleteDay(day)">{{ day }}</data-item>
       </div>
-      <button class="admin-data-add-btn">Add</button>
+      <button class="admin-data-add-btn" @click="addBell" >Add</button>
     </div>
     <div class="admin-data-column" id="admin-data-courses">
       <h3>Courses</h3>
       <div class="admin-data-column-content" id="admin-data-courses-content">
-        <data-item>Maths</data-item>
-        <data-item>Algorithms</data-item>
+        <data-item v-for="course in courses" :key="course" @edit="editCourse(course)" @delet="deleteCourse(course)">{{ course }}</data-item>
       </div>
-      <button class="admin-data-add-btn">Add</button>
+      <button class="admin-data-add-btn" @click="addCourse">Add</button>
     </div>
-    <button id="admin-data-generate">Generate Schedule</button>
+    <button id="admin-data-generate" @click="generate">Generate Schedule</button>
 
-<!--    <add-course></add-course>-->
-<!--    <add-day-bell></add-day-bell>-->
-    <div id="admin-data-backdrop"></div>
+    <add-course v-show="IsAddCourse" @closeWindow="closeWindow" ref="ac" @saveC="saveC"></add-course>
+    <add-day-bell v-show="IsAddDayBell" @closeWindow="closeWindow" ref="adb" @saveDB="saveDB"></add-day-bell>
+    <div id="admin-data-backdrop" v-if="IsAddDayBell || IsAddCourse"></div>
     <div id="admin-data-image"></div>
   </div>
 </template>
 
 <script>
-import DataItem from "@/components/Admin/DataItem";
+import DataItem from "./DataItem";
+import AddCourse from "./AddCourse";
+import AddDayBell from "./AddDayBell";
 export default {
   name: "AdminData",
-  components: {DataItem}
-}
+  components: {DataItem , AddCourse , AddDayBell},
+  data() {
+    return{
+      bells : ['8-9' , '9-10' , '10-11' , '11-12' , '12-1' , '1-2' , '2-3' , '3-4' , '4-5' ],
+      days : ['saturday' , 'sunday' , 'monday' , 'tuesday' , 'wednesday' , 'thursday' ],
+      courses : ['DA' , 'Algebra' , 'logic' , 'Architecture' , 'OS Lab'],
+      IsAddCourse : false,
+      IsAddDayBell : false,
+      check : '',
+      proccesing : ''
+    }
+  },
+  methods : {
+    addDay(){
+      this.$refs.adb.txt = ''
+      this.check = ''
+      this.proccesing = 'day'
+      this.IsAddDayBell = true
+    },
+    addBell() {
+      this.$refs.adb.txt = ''
+      this.check = ''
+      this.proccesing = 'bell'
+      this.IsAddDayBell = true
+    },
+    addCourse() {
+      this.$refs.ac.txt = ''
+      this.check = ''
+      this.IsAddCourse = true
+    },
+    closeWindow() {
+      this.IsAddCourse = false
+      this.IsAddDayBell = false
+    },
+    generate() {
+      // call generate
+    },
+    editBell(bell) {
+      this.addBell()
+      this.$refs.adb.txt = bell
+      this.check = bell
+    },
+    deleteBell(bell) {
+      const num = this.bells.indexOf(bell)
+      this.bells.splice(num , 1)
+    },
+    editDay(day) {
+      this.addDay()
+      this.$refs.adb.txt = day
+      this.check = day
+    },
+    deleteDay(day) {
+      const num = this.days.indexOf(day)
+      this.days.splice(num , 1)
+    },
+    editCourse(course) {
+      this.addCourse()
+      this.$refs.ac.txt = course
+      this.check = course
+    },
+    deleteCourse(course) {
+      const num = this.courses.indexOf(course)
+      this.courses.splice(num , 1)
+    },
+    saveDB() {
+      // SAVE TO DATABASE
+      this.IsAddDayBell = false
+      if (this.proccesing === 'bell'){
+        const num = this.courses.indexOf(this.check)
+        if (num > -1) {
+          this.bells[num] = this.$refs.adb.txt
+          this.proccesing = ''
+        }
+        else {
+          this.bells.push(this.$refs.adb.txt)
+          this.proccesing = ''
+        }
+      }
+      else if(this.proccesing === 'day') {
+        const num = this.courses.indexOf(this.check)
+        if (num > -1) {
+          this.days[num] = this.$refs.adb.txt
+          this.proccesing = ''
+        }
+        else {
+          this.days.push(this.$refs.adb.txt)
+          this.proccesing = ''
+        }
+      }
+    },
+    saveC() {
+      // SAVE TO DATABASE
+      this.IsAddCourse = false
+      let num = this.courses.indexOf(this.check)
+      if (num > -1) {
+        this.courses[num] = this.$refs.ac.txt
+        this.check = ''
+      }
+      else {
+        this.courses.push(this.$refs.ac.txt)
+        this.check = ''
+      }
+    }
+  }
+  }
 </script>
 
 <style scoped lang="scss">
@@ -106,7 +206,7 @@ export default {
   }
 
   #admin-data-backdrop {
-    display: none; //none or block
+    display: block;
     @include page-backdrop;
   }
   #admin-data-image {

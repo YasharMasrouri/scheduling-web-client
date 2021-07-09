@@ -1,14 +1,22 @@
 <template>
   <div id="data-item-container">
-    <div id="data-item-edit"><button><i class="far fa-pen"></i></button></div>
-    <div id="data-item-delete"><button><i class="far fa-trash"></i></button></div>
+    <div id="data-item-edit" @click="edit"><button><i class="far fa-pen"></i></button></div>
+    <div id="data-item-delete" @click="delet"><button><i class="far fa-trash"></i></button></div>
     <div id="data-item-box"><p><slot></slot></p></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "DataItem"
+  name: "DataItem",
+  methods : {
+    edit() {
+      this.$emit('edit')
+    },
+    delet() {
+      this.$emit('delet')
+    }
+  }
 }
 </script>
 
