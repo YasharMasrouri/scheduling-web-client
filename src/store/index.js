@@ -8,32 +8,48 @@ export default new Vuex.Store({
     token : "",
     expireAt : "",
     user : {
-      firstName : "",
-      lastName : "",
+      firstName : "Jafar",
+      lastName : "Tanha",
       id : null,
-      code : null,
+      code : 123456789,
       password : null,
-      role : "",
-      userImage : "",
+      role : "Master",
+      userImage : "./../../assets/avatar-test.png",
     },
     ServerUrl : "",
 },
   mutations: {
-    SetState (state , payload) {
+    SetState(state, payload) {
       state.user = payload.user
+      if (state.user.userImage === "") {
+        state.user.userImage = '../../assets/avatar-test.png'
+      }
       state.token = payload.token
       state.expireAt = payload.expireAt
     },
-    changePassword (state , payload) {
+    changePassword(state, payload) {
       state.user.password = payload
     },
-    changeName (state , payload) {
+    changeName(state, payload) {
       state.user.firstName = payload.firstName
       state.user.lastName = payload.lastName
     },
-    changeImage (state , payload) {
+    changeImage(state, payload) {
       state.user.userImage = payload
-    }
+    },
+    reset(state) {
+      state.user = {
+        firstName: "Jafar",
+        lastName: "Tanha",
+        id: null,
+        code: 123456789,
+        password: null,
+        role: "Master",
+        userImage: "./../../assets/avatar-test.png",
+      }
+      state.token = ""
+      state.expireAt = ""
+    },
   },
   actions: {
     SetState(context, payload) {
@@ -47,6 +63,9 @@ export default new Vuex.Store({
     },
     changeImage (context , payload) {
       context.commit('changeImage' , payload)
+    },
+    reset (context) {
+      context.commit('reset')
     }
   },
   getters: {
