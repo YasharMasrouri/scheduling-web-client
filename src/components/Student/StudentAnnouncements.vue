@@ -18,7 +18,6 @@
         </the-announcement>
       </div>
     </div>
-
     <div id="student-announce-image"></div>
   </div>
 </template>
