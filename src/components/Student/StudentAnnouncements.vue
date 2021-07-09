@@ -11,7 +11,11 @@
       </div>
 
       <div class="scroll">
-
+        <the-announcement v-for="announcement in announcements" :key="announcement.id" :editable="false">
+          <span slot="title">{{ announcement.title }}</span>
+          <span slot="date">{{ announcement.dateTime }}</span>
+          <span slot="text">{{ announcement.description }}</span>
+        </the-announcement>
       </div>
     </div>
 
@@ -20,28 +24,29 @@
 </template>
 
 <script>
+import TheAnnouncement from "@/components/Common/TheAnnouncement";
 export default {
   name: "StudentAnnouncements",
-  components: {},
+  components: {TheAnnouncement},
   data() {
     return {
       announcements: [
         {
           id: 0,
-          title: 'Slm jiyar',
-          description: 'nja san jiyar',
+          title: 'yallah kishi yoxsan hesh',
+          description: 'janivi yiyaram daw mn',
           dateTime: Date.now()
         },
         {
-          id: 0,
-          title: 'Slm jiyar',
-          description: 'nja san jiyar',
+          id: 1,
+          title: 'nokaram',
+          description: 'bashiva dolannam',
           dateTime: Date.now()
         },
         {
-          id: 0,
-          title: 'Slm jiyar',
-          description: 'nja san jiyar',
+          id: 2,
+          title: 'golhovallahol ahad',
+          description: 'allahossamad',
           dateTime: Date.now()
         }
       ]

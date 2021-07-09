@@ -8,7 +8,7 @@
       <div id="announcement-text-div">
         <p><slot name="text"></slot></p>
       </div>
-      <button id="announcement-delete" title="Delete Announcement"><i class="fal fa-trash-alt"></i></button>
+      <button v-if="editable" id="announcement-delete" title="Delete Announcement"><i class="fal fa-trash-alt"></i></button>
     </div>
 
   </div>
@@ -16,7 +16,14 @@
 
 <script>
 export default {
-  name: "TheAnnouncement"
+  name: "TheAnnouncement",
+  props: {
+    editable: {
+      type: Boolean,
+      required: false,
+      default: true
+    }
+  }
 }
 </script>
 
