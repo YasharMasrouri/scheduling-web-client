@@ -13,6 +13,8 @@
       <button class="admin-student-buttons">Add Multiple</button>
     </div>
 
+<!--    <add-one></add-one>-->
+<!--    <add-multiple></add-multiple>-->
     <div id="admin-students-backdrop"></div>
     <div id="admin-students-image"></div>
   </div>
