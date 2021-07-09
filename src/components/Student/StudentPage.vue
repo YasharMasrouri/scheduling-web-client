@@ -1,10 +1,10 @@
 <template>
   <div id="student-page-container">
     <the-header>
-      <router-link class="the-header-list-item " to="/Student/Home">Home</router-link>
-      <router-link class="the-header-list-item " to="/Student/Announcements">Announcements</router-link>
-      <router-link class="the-header-list-item " to="/Student/Courses">Courses</router-link>
-      <router-link class="the-header-list-item " to="/Student/SelectedCourses">SelectedCourses</router-link>
+      <router-link class="the-header-list-item" to="/Student/Home">Home</router-link>
+      <router-link class="the-header-list-item" to="/Student/Announcements">Announcements</router-link>
+      <router-link class="the-header-list-item" to="/Student/Courses">Courses</router-link>
+      <router-link class="the-header-list-item" to="/Student/SelectedCourses">SelectedCourses</router-link>
     </the-header>
 
     <the-container>
@@ -34,4 +34,6 @@ export default {
   @include page-container;
 
 }
+
+
 </style>

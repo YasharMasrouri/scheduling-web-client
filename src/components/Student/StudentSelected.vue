@@ -1,23 +1,12 @@
 <template>
   <div id="student-selected-container">
-    <middle class="scroll">
+    <div class="scroll">
       <div class="pl-5">
         <v-row>
-          <Courses/>
-          <Courses/>
-          <Courses/>
-          <Courses/>
-          <Courses/>
-          <Courses/>
-          <Courses/>
-          <Courses/>
-          <Courses/>
-          <Courses/>
-
-
+          <courses v-for="course in courses" :key="course.id" :course="course" :selectable="false"/>
         </v-row>
       </div>
-    </middle>
+    </div>
 
     <div id="student-selected-image"></div>
   </div>
@@ -29,7 +18,43 @@ import Courses from "./Courses";
 
 export default {
   name: "StudentSelected",
-  components: {Courses}
+  components: {Courses},
+  data() {
+    return {
+      courses: [
+        {
+          id: 0,
+          title: "Yallah kishi yoxsan hesh",
+          master: "Juvan",
+          time: "bidana time"
+        },
+        {
+          id: 1,
+          title: "Yallah kishi yoxsan hesh",
+          master: "Juvan",
+          time: "bidana time"
+        },
+        {
+          id: 2,
+          title: "Yallah kishi yoxsan hesh",
+          master: "Juvan",
+          time: "bidana time"
+        },
+        {
+          id: 3,
+          title: "Yallah kishi yoxsan hesh",
+          master: "Juvan",
+          time: "bidana time"
+        },
+        {
+          id: 4,
+          title: "Yallah kishi yoxsan hesh",
+          master: "Juvan",
+          time: "bidana time"
+        },
+      ]
+    }
+  }
 }
 </script>
 
