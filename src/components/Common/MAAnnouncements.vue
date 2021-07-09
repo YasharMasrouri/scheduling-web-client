@@ -1,12 +1,12 @@
 <template>
   <div id="m-a-announcements-container">
     <div id="m-a-announcements">
-      <announcements>
+      <the-announcement>
         <span slot="title">Title</span>
         <span slot="date">00/03/25</span>
         <span slot="text">Announcement one</span>
-      </announcements>
-      <announcements>
+      </the-announcement>
+      <the-announcement>
         <span slot="title">Title</span>
         <span slot="date">00/03/27</span>
         <span slot="text">
@@ -23,7 +23,7 @@
         Excepteur sint occaecat cupidatat non proident,
         sunt in culpa qui officia deserunt mollit anim id est laborum."
       </span>
-      </announcements>
+      </the-announcement>
     </div>
     <div id="m-a-announcements-btn-div">
       <button id="m-a-announcements-btn">Add Announcement</button>
@@ -37,11 +37,11 @@
 </template>
 
 <script>
-import Announcements from "@/components/Common/Announcements";
+import TheAnnouncement from "@/components/Common/TheAnnouncement";
 
 export default {
   name: "MAAnnouncements",
-  components: {Announcements}
+  components: {TheAnnouncement}
 }
 </script>
 

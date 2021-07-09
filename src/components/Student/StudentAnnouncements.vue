@@ -1,18 +1,18 @@
 <template>
   <div id="student-announce-container">
     <div class="theGrid">
-      <search>
+      <div>
         <div class="search ml-auto mr-auto">
           <input type="text" class="searchTerm title" placeholder="Search by course name...">
           <button type="submit" class="searchButton">
             <i class="fa fa-search"></i>
           </button>
         </div>
-      </search>
+      </div>
 
-      <middle class="scroll">
+      <div class="scroll">
 
-      </middle>
+      </div>
     </div>
 
     <div id="student-announce-image"></div>
@@ -22,7 +22,31 @@
 <script>
 export default {
   name: "StudentAnnouncements",
-  components: {}
+  components: {},
+  data() {
+    return {
+      announcements: [
+        {
+          id: 0,
+          title: 'Slm jiyar',
+          description: 'nja san jiyar',
+          dateTime: Date.now()
+        },
+        {
+          id: 0,
+          title: 'Slm jiyar',
+          description: 'nja san jiyar',
+          dateTime: Date.now()
+        },
+        {
+          id: 0,
+          title: 'Slm jiyar',
+          description: 'nja san jiyar',
+          dateTime: Date.now()
+        }
+      ]
+    }
+  }
 }
 </script>
 
