@@ -1,7 +1,8 @@
 <template>
-  <div class="bellCourse py-0">
-    <v-card outlined shaped class="card margin ma-3">
-      <v-card-text class=" py-0">
+  <div class="bellCourse my-3">
+
+    <v-card outlined shaped class="card ma-4">
+      <v-card-text class="py-1">
         <p class="text-body-1 black--text mb-0 mt-1">
           shanbe
         </p>
@@ -9,8 +10,10 @@
           4-6
         </p>
       </v-card-text>
-      <v-checkbox class="py-0" color="#ED6038"></v-checkbox>
+      <v-checkbox class="checkbox py-0 " color="#ED6038"></v-checkbox>
+
     </v-card>
+
   </div>
 </template>
 
@@ -35,10 +38,15 @@ export default {
   border: 1px solid #ED6038;
   width: 100%;
   height: 80%;
+
 }
 
-.margin {
-  margin: 10px;
+.checkbox{
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(+50%,-50%);
+
 }
 
 </style>
