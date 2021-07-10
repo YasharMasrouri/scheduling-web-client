@@ -1,36 +1,40 @@
 <template>
-  <div id="add-multiple-container">
+  <div id="add-multiple-container" @click="closePopUp">
     <div id="add-multiple-box">
       <form class="text-center">
         <v-text-field
             color="#ED6038"
-            label="Name"
+            label="First Name"
             class="headline"
+            v-model="firstName"
+        ></v-text-field>
+        <v-text-field
+            color="#ED6038"
+            label="Last Name"
+            class="headline"
+            v-model="lastName"
         ></v-text-field>
         <v-text-field
             color="#ED6038"
             label="Code"
             class="headline"
+            v-model="code"
         ></v-text-field>
         <v-text-field
             color="#ED6038"
             label="Password"
             class="headline"
+            v-model="password"
         ></v-text-field>
-        <button id="add-multiple-btn">Add</button>
+        <button id="add-multiple-btn" @click="add">Add</button>
       </form>
       <div id="added-accounts">
-        <div class="added-account">
-          <label class="account-name">Mahdi Chavoshi</label>
-          <label class="account-id">234508534</label>
-          <button class="account-remove" title="Remove"><i class="far fa-times-circle"></i></button>
+        <div class="added-account" v-for="index in list" :key="index.code">
+          <label class="account-name">{{ index.firstName }} {{ index.lastName }}</label>
+          <label class="account-id">{{ index.code }}</label>
+          <button class="account-remove" title="Remove" @click="delet(index.code)"><i class="far fa-times-circle"></i></button>
         </div>
-        <div class="added-account">
-          <label class="account-name">Yashar Masrouri</label>
-          <label class="account-id">244508534</label>
-          <button class="account-remove" title="Remove"><i class="far fa-times-circle"></i></button>
-        </div>
-        <button id="save-accounts">Save</button>
+        <button id="save-accounts" @click="save">Save</button>
       </div>
     </div>
   </div>
@@ -38,7 +42,43 @@
 
 <script>
 export default {
-  name: "AddMultiple"
+  name: "AddMultiple",
+  data() {
+    return {
+      firstName : '' ,
+      lastName : '',
+      code : '' ,
+      password : '',
+      list : []
+    }
+  },
+  methods : {
+    save(e) {
+      e.preventDefault()
+      this.$emit('saveMultiple')
+    },
+    delet(code) {
+      const num = this.list.findIndex(a => a.code == code)
+      this.list.splice(num , 1)
+    },
+    add(e) {
+      e.preventDefault()
+      const obj = {
+        firstName : this.firstName,
+        lastName : this.lastName,
+        code : this.code ,
+        password : this.password,
+      }
+      this.list.push(obj)
+      this.firstName = ''
+      this.lastName = ''
+      this.code = ''
+      this.password = ''
+    },
+    closePopUp() {
+      this.$emit('closePopUps')
+    }
+  }
 }
 </script>
 
