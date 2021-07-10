@@ -104,6 +104,7 @@ export default {
     height: 90%;
     z-index: 100;
     padding-left: 20px;
+    padding-right: 10px;
     overflow-y: scroll;
     overflow-x: hidden;
   }
