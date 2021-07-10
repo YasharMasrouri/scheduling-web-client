@@ -1,5 +1,5 @@
 <template>
-  <div id="add-announcement-container">
+  <div id="add-announcement-container" @click="closePopUp">
     <div id="add-announcement-box">
       <button class="close-box"><i class="far fa-times-circle"></i></button>
       <form class="text-left">
@@ -7,20 +7,23 @@
             color="#ED6038"
             label="Title"
             style="width: 20%"
+            v-model="title"
         ></v-text-field>
         <v-text-field
             color="#ED6038"
             label="Date"
             type="date"
             style="width: 15%"
+            v-model="date"
         ></v-text-field>
         <v-textarea
             color="#ED6038"
             no-resize
             label="Description"
             style="height: 200px"
+            v-model="description"
         ></v-textarea>
-        <button id="add-announcement-btn">Add</button>
+        <button id="add-announcement-btn" @click="saveAnnouncement">Add</button>
       </form>
     </div>
   </div>
@@ -28,7 +31,23 @@
 
 <script>
 export default {
-  name: "AddAnnouncement"
+  name: "AddAnnouncement",
+  data() {
+    return {
+      title : '',
+      date : '',
+      description : ''
+    }
+  },
+  methods : {
+    saveAnnouncement(e) {
+      e.preventDefault()
+      this.$emit('saveAnnouncement')
+    },
+    closePopUp() {
+      this.$emit('closePopUp')
+    }
+  }
 }
 </script>
 

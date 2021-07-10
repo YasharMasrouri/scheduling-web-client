@@ -8,7 +8,7 @@
       <div id="announcement-text-div">
         <p><slot name="text"></slot></p>
       </div>
-      <button v-if="editable" id="announcement-delete" title="Delete Announcement"><i class="fal fa-trash-alt"></i></button>
+      <button v-if="editable" id="announcement-delete" title="Delete Announcement" @click="delet"><i class="fal fa-trash-alt"></i></button>
     </div>
 
   </div>
@@ -22,6 +22,11 @@ export default {
       type: Boolean,
       required: false,
       default: true
+    }
+  },
+  methods : {
+    delet() {
+      this.$emit('deleteAnnouncement')
     }
   }
 }
