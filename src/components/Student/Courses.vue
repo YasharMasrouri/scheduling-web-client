@@ -1,6 +1,6 @@
 <template>
-  <div class="cards py-1 padding">
-    <v-card outlined shaped class="centerH margin ma-3">
+  <div class="courses py-1 padding">
+    <v-card outlined shaped class="card margin ma-3">
       <v-card-text class=" text-left py-1">
         <p class="title black--text mb-0 mt-1">title</p>
         <p class="text-body-1  mb-0 mt-1 ">
@@ -22,16 +22,18 @@ export default {
 </script>
 
 <style scoped>
-.cards {
+.courses{
   width: 32%;
   display: grid;
   justify-content: space-around;
+
 }
 
-.centerH {
+.card {
   width: 100%;
   display: flex;
   justify-content: center;
+  border: 1px solid #ED6038;
 }
 
 .margin {
