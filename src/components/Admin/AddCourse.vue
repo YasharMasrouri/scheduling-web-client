@@ -1,11 +1,12 @@
 <template>
-  <div id="add-course-container">
+  <div id="add-course-container" @click="closeWindow">
     <div id="add-course-box">
       <form class="text-center">
         <v-text-field
             color="#ED6038"
             label="Course title"
             class="headline"
+            :value="txt"
         ></v-text-field>
         <v-text-field
             color="#ED6038"
@@ -20,7 +21,17 @@
 
 <script>
 export default {
-  name: "AddCourse"
+  name: "AddCourse",
+  data() {
+    return {
+      txt : ''
+    }
+  },
+  methods : {
+    closeWindow() {
+      this.$emit('closeWindow')
+    }
+  }
 }
 </script>
 

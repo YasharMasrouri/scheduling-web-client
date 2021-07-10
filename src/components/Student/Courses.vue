@@ -3,19 +3,17 @@
 
     <v-card outlined shaped class="card ma-3">
       <v-card-text class=" text-left py-1">
-        <p class="title black--text mb-0 mt-1">title</p>
-
+        <p class="title black--text mb-0 mt-1">{{ course.title }}</p>
         <p class="text-body-1  mb-0 mt-1 ">
-          master : KK.tanha
+          master : {{ course.master }}
         </p>
 
         <p class="text-body-1 mb-0 mt-1 ">
-          Time : seshanbe , 4-6
+          Time : {{ course.time }}
         </p>
 
       </v-card-text>
-      <v-checkbox class="checkbox pa-0" color="#ED6038"></v-checkbox>
-
+      <v-checkbox v-if="selectable" class="py-0 pr-2" color="#ED6038" v-model="course.isSelected" />
     </v-card>
   </div>
 </template>
@@ -23,6 +21,17 @@
 <script>
 export default {
   name: "Courses",
+  props: {
+    course: {
+      type: Object,
+      required: true
+    },
+    selectable: {
+      type: Boolean,
+      required: false,
+      default: true
+    }
+  }
 }
 </script>
 

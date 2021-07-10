@@ -6,7 +6,7 @@
         <v-responsive>
           <div class="imgDiv">
             <v-avatar id="avatar" class="my-4" size="200">
-              <img src="https://picsum.photos/id/11/500/300"/>
+              <img :src="ImgSrc"/>
               <input type="file" id="file">
               <label for="file" id="uploadBtn">
 
@@ -18,9 +18,9 @@
         </v-responsive>
 
         <v-card-text>
-          <div class="text-center display-1 black--text mt-1">Name: Jafar Tanha</div>
-          <div class="text-center headline black--text mt-1">Code:12345678</div>
-          <div class="text-center headline black--text my-1">Role: Master</div>
+          <div class="text-center display-1 black--text mt-1">Name: {{ name }}</div>
+          <div class="text-center headline black--text mt-1">Code: {{ code }}</div>
+          <div class="text-center headline black--text my-1">Role: {{ role }}</div>
         </v-card-text>
 
         <v-card-action>
@@ -45,6 +45,14 @@ export default {
     EditName,
     EditPassword
   },
+  data(){
+    return {
+      name : this.$store.state.user.firstName + " " + this.$store.state.user.lastName,
+      code : this.$store.state.user.code,
+      role : this.$store.state.user.role,
+      ImgSrc : this.$store.state.user.userImage
+    }
+  }
 }
 </script>
 

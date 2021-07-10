@@ -3,17 +3,13 @@
   <div id="table-cell-container">
     <div id="table-cell-box">
       <div id="cell-box-items">
-        <cell-item>
-          <span slot="cell-item-title">Title</span>
-          <span slot="cell-item-master">Master</span>
-        </cell-item>
-        <cell-item>
-          <span slot="cell-item-title">Algorithms</span>
-          <span slot="cell-item-master">Tanha</span>
+        <cell-item v-for="course in courses" :key="course.label" >
+          <span slot="cell-item-title">{{ course.label }}</span>
+          <span slot="cell-item-master">{{ course.master }}</span>
         </cell-item>
       </div>
       <div id="cell-box-close-div">
-        <button id="cell-box-close-btn">close</button>
+        <button id="cell-box-close-btn" @click="closeItem">close</button>
       </div>
     </div>
 
@@ -26,7 +22,21 @@ import CellItem from "@/components/Admin/CellItem";
 
 export default {
   name: "TableCell",
-  components: {CellItem}
+  components: {CellItem},
+  data() {
+    return {
+      courses : [{label : 'DA' , master :'tanha'} , {label: 'madar' , master : 'zahra egbali'}]
+    }
+  },
+  props : ['day' , 'bell'],
+  beforeMount() {
+    // get table items from back
+  },
+  methods : {
+    closeItem() {
+      this.$emit('closeItem')
+    }
+  }
 }
 </script>
 

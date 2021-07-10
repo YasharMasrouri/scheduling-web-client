@@ -1,37 +1,26 @@
 <template>
   <div id="student-course-container">
     <div class="theGrid">
-      <search>
+      <div>
         <div class="search ml-auto mr-auto">
-          <input type="text" class="searchTerm title" placeholder="Search by course name...">
-          <button type="submit" class="searchButton">
+          <input type="text" class="searchTerm title" placeholder="Search by course name..." v-model="searchText">
+          <button type="submit" class="searchButton" @click="search">
             <i class="fa fa-search"></i>
           </button>
         </div>
-      </search>
+      </div>
 
-      <middle class="scroll">
+      <div class="scroll">
         <div class="pl-5">
           <v-row>
-            <Courses/>
-            <Courses/>
-            <Courses/>
-            <Courses/>
-            <Courses/>
-            <Courses/>
-            <Courses/>
-            <Courses/>
-            <Courses/>
-            <Courses/>
-
-
+            <courses v-for="course in resultCourses" :key="course.id" :course="course"/>
           </v-row>
         </div>
-      </middle>
-      <btn class="text-center">
+      </div>
+      <div class="text-center">
         <v-btn large rounded elevation="2" color="#ED6038" class="saveBtn white--text text-capitalize text-h5">save
         </v-btn>
-      </btn>
+      </div>
     </div>
 
     <div id="student-page-image"></div>
@@ -43,7 +32,68 @@ import Courses from "@/components/Student/Courses";
 
 export default {
   name: "StudentCourseSelect",
-  components: {Courses,}
+  components: {Courses,},
+  data() {
+    return {
+      courses: [
+        {
+          id: 0,
+          title: "Yallah kishi yoxsan hesh",
+          master: "Juvan",
+          time: "bidana time",
+          isSelected: true
+        },
+        {
+          id: 1,
+          title: "Yallah kishi yoxsan hesh",
+          master: "Juvan",
+          time: "bidana time",
+          isSelected: false
+        },
+        {
+          id: 2,
+          title: "Yallah kishi yoxsan hesh",
+          master: "Juvan",
+          time: "bidana time",
+          isSelected: false
+        },
+        {
+          id: 3,
+          title: "Yallah kishi yoxsan hesh",
+          master: "Juvan",
+          time: "bidana time",
+          isSelected: false
+        },
+        {
+          id: 4,
+          title: "Yallah kishi yoxsan hesh",
+          master: "Juvan",
+          time: "bidana time",
+          isSelected: false
+        },
+      ],
+      searchText: '',
+      hasSearched: false
+    }
+  },
+  computed: {
+    resultCourses() {
+      return this.hasSearched ?
+          this.courses.filter(course => course.title.test(`*.${this.searchText}*.`)) :
+          this.courses
+    }
+  },
+  methods: {
+    save() {
+      const selectedCourses = this.courses.filter(course => course.isSelected)
+      if (selectedCourses.length > 0) {
+        // TODO save this courses for student in database
+      }
+    },
+    search() {
+      this.hasSearched = this.searchText.length !== 0
+    }
+  }
 }
 </script>
 

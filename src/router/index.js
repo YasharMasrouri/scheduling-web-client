@@ -40,20 +40,22 @@ const routes = [
             {path: "/Master/SelectedSchedule" , component: MasterSelected},
             {path: "/Master/Edit" , component: EditProfile}
         ]},
-    {path: "/Student" , component: StudentPage , children:[
+    {path: "/Student" , component: StudentPage , children: [
             {path: "" , redirect : "/Student/Home"},
             {path: "/Student/Home" , component: StudentHome},
             {path: "/Student/Announcements" , component: StudentAnnouncements},
             {path: "/Student/Courses" , component: StudentCourseSelect},
             {path: "/Student/SelectedCourses" , component: StudentSelected},
             {path: "/Student/Edit" , component: EditProfile}
-        ]}
+        ]
+    }
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+    linkActiveClass: "list-item-active"
 })
 
 export default router

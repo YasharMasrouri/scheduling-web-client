@@ -35,7 +35,7 @@
               </v-btn
               >
             </div>
-            <p class="caption center" router>forget password?</p>
+            <p class="caption center">forget password?</p>
           </div>
         </v-col>
         <v-divider inset vertical></v-divider>

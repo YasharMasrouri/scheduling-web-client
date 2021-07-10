@@ -5,19 +5,17 @@
       <slot></slot>
     </div>
 
-    <div id="header-profile">
+    <div id="header-profile" :style="headerStyle">
 
       <div id="profile-content">
         <div id="content-dropdown">
-          <button id="dropdown-icon">
+          <button id="dropdown-icon" @click="dropDownMenu">
             <i class="fas fa-caret-down"></i>
           </button>
         </div>
         <div id="content-info">
-<!--          <label id="info-name">{{ name }}</label>-->
-<!--          <label id="info-ID">{{ code }}</label>-->
-          <label id="info-name">Jafar Tanha</label>
-          <label id="info-ID">125478652</label>
+          <label id="info-name">{{ name }}</label>
+          <label id="info-ID">{{ code }}</label>
         </div>
         <div id="content-image">
           <v-avatar size="60" color="red">
@@ -26,13 +24,12 @@
         </div>
       </div>
 
-<!--      when this div is not displayed, id="header-profile" border is set to none-->
-      <div id="profile-list">
+      <div id="profile-list" v-if="showDropdownMenu">
         <div>
-          <button class="profile-list-item"><i class="fas fa-cog profile-list-icon"></i>Edit Profile</button>
+          <button class="profile-list-item" @click="gotoEdit"><i class="fas fa-cog profile-list-icon"></i>Edit Profile</button>
         </div>
         <div>
-          <button class="profile-list-item"><i class="far fa-sign-out profile-list-icon"></i>Log Out</button>
+          <button class="profile-list-item" @click="logOut"><i class="far fa-sign-out profile-list-icon"></i>Log Out</button>
         </div>
       </div>
 
@@ -48,9 +45,31 @@ export default {
     return {
       code : this.$store.state.user.code,
       name : this.$store.state.user.firstName + " " + this.$store.state.user.lastName,
-      image : this.$store.state.user.userImage
+      image : this.$store.state.user.userImage,
+      showDropdownMenu : false,
+      headerStyle : 'border : none' ,
+
     }
   },
+  methods : {
+    gotoEdit() {
+      this.$router.push(`/${this.$store.state.user.role}/Edit`)
+    },
+    dropDownMenu() {
+      if (!this.showDropdownMenu) {
+        this.showDropdownMenu = true
+        this.headerStyle = 'border: 1px solid black'
+      }
+      else {
+        this.showDropdownMenu = false
+        this.headerStyle = ''
+      }
+    },
+    logOut() {
+      this.$store.commit('reset')
+      this.$router.push('/')
+    }
+  }
 
 }
 </script>
@@ -141,7 +160,7 @@ export default {
     }
 
     #profile-list {
-      display: none; // toggle none and block
+      display: block; // toggle none and block
       .profile-list-item {
         width: 100%;
         padding: 16px 8px;

@@ -1,13 +1,14 @@
 <template>
-  <div id="add-day-container">
+  <div id="add-day-container" @click="closeWindow">
     <div id="add-day-box">
       <form class="text-center">
         <v-text-field
             color="#ED6038"
             label="Day/Bell title"
             class="headline"
+            v-model="txt"
         ></v-text-field>
-        <button id="add-day-btn">Add</button>
+        <button id="add-day-btn" @click="save">Add</button>
       </form>
     </div>
   </div>
@@ -15,7 +16,20 @@
 
 <script>
 export default {
-  name: "AddDayBell"
+  name: "AddDayBell",
+  data() {
+    return {
+      txt : ''
+    }
+  },
+  methods : {
+    closeWindow() {
+      this.$emit('closeWindow')
+    },
+    save() {
+      this.$emit('saveDB')
+    }
+  }
 }
 </script>
 
