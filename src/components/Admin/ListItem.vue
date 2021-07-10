@@ -3,8 +3,8 @@
     <div id="list-item-name"><slot name="name"></slot></div>
     <div id="list-item-id"><slot name="id"></slot></div>
     <div id="list-item-buttons">
-      <button id="list-item-edit"><i class="far fa-pen"></i></button>
-      <button id="list-item-delete"><i class="far fa-trash"></i></button>
+      <button id="list-item-edit" @click="edit"><i class="far fa-pen"></i></button>
+      <button id="list-item-delete" @click="delet"><i class="far fa-trash"></i></button>
     </div>
   </div>
 
@@ -12,7 +12,15 @@
 
 <script>
 export default {
-  name: "ListItem"
+  name: "ListItem",
+  methods : {
+    edit() {
+      this.$emit('edit')
+    },
+    delet() {
+      this.$emit('delet')
+    }
+  }
 }
 </script>
 

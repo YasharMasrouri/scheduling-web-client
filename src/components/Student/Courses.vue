@@ -13,7 +13,7 @@
         </p>
 
       </v-card-text>
-      <v-checkbox v-if="selectable" class="py-0 pr-2" color="#ED6038" v-model="course.isSelected" />
+      <v-checkbox class="checkbox pa-0" color="#ED6038" v-model="course.isSelected" />
     </v-card>
   </div>
 </template>

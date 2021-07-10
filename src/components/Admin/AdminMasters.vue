@@ -1,30 +1,144 @@
 <template>
   <div id="admin-masters-container">
     <div class="masters-list" id="masters-list-left">
-      <list-item><label slot="name">Yashar Masrouri</label><label slot="id">123456789</label></list-item>
-      <list-item><label slot="name">Amin Farzane</label><label slot="id">993456789</label></list-item>
+      <list-item v-for="master1 in masters1" :key="master1.code" @edit="edit(master1.code , master1.firstName , master1.lastName , master1.password)" @delet="delet(master1.code)"><label slot="name">{{ master1.firstName }} {{ master1.lastName }}</label><label slot="id">{{ master1.code }}</label></list-item>
     </div>
     <div class="masters-list" id="masters-list-right">
-      <list-item><label slot="name">Mahdi Chavoshi</label><label slot="id">693456789</label></list-item>
-      <list-item><label slot="name">Bita Khashechian</label><label slot="id">853456700</label></list-item>
+      <list-item v-for="master2 in masters2" :key="master2.code" @edit="edit(master2.code , master2.firstName , master2.lastName , master2.password)" @delet="delet(master2.code)"><label slot="name">{{ master2.firstName }} {{ master2.lastName }}</label><label slot="id">{{ master2.code }}</label></list-item>
     </div>
     <div id="admin-masters-buttons-div">
-      <button class="admin-masters-buttons">Add One</button>
-      <button class="admin-masters-buttons">Add Multiple</button>
+      <button class="admin-masters-buttons" @click="openAddOne">Add One</button>
+      <button class="admin-masters-buttons" @click="openAddMultiple">Add Multiple</button>
     </div>
 
-    <!--    <add-one></add-one>-->
-    <!--    <add-multiple></add-multiple>-->
-    <div id="admin-masters-backdrop"></div>
-    <div id="admin-masters-image"></div>
+
+    <div id="admin-masters-backdrop" v-show="isAddMultiple || isAddOne" @click="closePopUps"></div>
+    <add-one v-show="isAddOne" @closePopUps="closePopUps" ref="addOne" @saveOne="saveOne"></add-one>
+    <add-multiple v-show="isAddMultiple" @closePopUps="closePopUps" ref="addMultiple" @saveMultiple="saveMultiple"></add-multiple>
+    <div id="admin-mastersimage"></div>
   </div>
 </template>
 
 <script>
-import ListItem from "@/components/Admin/ListItem";
+import ListItem from "./ListItem";
+import AddOne from "./AddOne";
+import AddMultiple from "./AddMultiple";
 export default {
   name: "AdminMasters",
-  components: { ListItem}
+  components: { ListItem , AddOne , AddMultiple},
+  data() {
+    return {
+      masters : [{firstName : 'mahdi' , lastName : 'chavoshi' , code : 123456789 , password : 'fev56v516'},{firstName : 'bita' , lastName : 'khashechian' ,  code : 987654321 , password : 'fev56v516'},{firstName: 'amin' , lastName : 'farzane' , code : 512364798 , password : 'fev56v516'}],
+      masters1 : [],
+      masters2 : [],
+      isAddOne : false,
+      isAddMultiple : false,
+      editAction : false,
+      editCode : 0,
+      add : true
+    }
+  },
+  methods : {
+    openAddOne() {
+      this.editAction = false
+      this.isAddOne = true
+    },
+    openAddMultiple() {
+      this.editAction = false
+      this.isAddMultiple = true
+    },
+    closePopUps() {
+      this.isAddOne = false
+      this.isAddMultiple =false
+      this.editAction = false
+      this.$refs.addOne.code = ''
+      this.$refs.addOne.password = ''
+      this.$refs.addOne.lastName = ''
+      this.$refs.addOne.firstName = ''
+      this.$refs.addMultiple.code = ''
+      this.$refs.addMultiple.password = ''
+      this.$refs.addMultiple.lastName = ''
+      this.$refs.addMultiple.firstName = ''
+    },
+    edit(code , firstName , lastName , password) {
+      this.editCode = code
+      this.openAddOne()
+      this.editAction = true
+      this.$refs.addOne.code = code
+      this.$refs.addOne.firstName = firstName
+      this.$refs.addOne.lastName = lastName
+      this.$refs.addOne.password = password
+    },
+    delet(code) {
+      let num = this.masters1.findIndex(master => master.code === code)
+      if(num > -1){
+        this.masters1.splice(num , 1)
+      }
+      else{
+        num = this.masters2.findIndex(master => master.code === code)
+        this.masters2.splice(num , 1)
+      }
+    },
+    saveMultiple() {
+      for (let i = 0 ; i < this.$refs.addMultiple.list.length ; i++){
+        if (this.add){
+          this.masters2.push(this.$refs.addMultiple.list[i])
+          this.add = false
+        }
+        else {
+          this.masters1.push(this.$refs.addMultiple.list[i])
+          this.add = true
+        }
+      }
+      this.$refs.addMultiple.list = []
+      this.closePopUps()
+    },
+    saveOne() {
+      // save to server left
+      console.log(this.$refs.addOne.code)
+      if (this.editAction === true) {
+        let num = this.masters1.findIndex(master => master.code === this.editCode)
+        if(num > -1){
+          this.masters1[num].code = this.$refs.addOne.code
+          this.masters1[num].firstNAme = this.$refs.addOne.firstName
+          this.masters1[num].lastName = this.$refs.addOne.lastName
+          this.masters1[num].password = this.$refs.addOne.password
+          this.editAction = false
+        }
+        else{
+          num = this.masters2.findIndex(master => master.code === this.editCode)
+          this.masters2[num].code = this.$refs.addOne.code
+          this.masters2[num].firstNAme = this.$refs.addOne.firstName
+          this.masters2[num].lastName = this.$refs.addOne.lastName
+          this.masters2[num].password = this.$refs.addOne.password
+          this.editAction = false
+        }
+      }
+      else {
+        const master = {
+          firstName : this.$refs.addOne.firstName,
+          lastName : this.$refs.addOne.lastName,
+          code : this.$refs.addOne.code,
+          password : this.$refs.addOne.password
+        }
+        if (this.add) {
+          this.masters1.push(master)
+          this.add = false
+        }
+        else {
+          this.masters2.push(master)
+          this.add = true
+        }
+      }
+      this.closePopUps()
+    }
+  },
+  beforeMount() {
+    //fetch
+    const num = Math.round(this.masters.length/2)
+    this.masters1 = this.masters.slice(0 , num)
+    this.masters2 = this.masters.slice(num ,this.masters.length)
+  }
 }
 </script>
 
@@ -77,7 +191,7 @@ export default {
   }
 
   #admin-masters-backdrop {
-    display: none; //none or block
+    display: block; //none or block
     @include page-backdrop;
   }
   #admin-masters-image {
