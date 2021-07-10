@@ -10,8 +10,8 @@
         </div>
       </div>
 
-      <div class="scroll">
-        <the-announcement v-for="announcement in announcements" :key="announcement.id" :editable="false">
+      <div class="scroll ann">
+        <the-announcement  v-for="announcement in announcements" :key="announcement.id" :editable="false">
           <span slot="title">{{ announcement.title }}</span>
           <span slot="date">{{ announcement.dateTime }}</span>
           <span slot="text">{{ announcement.description }}</span>
@@ -102,9 +102,12 @@ export default {
   .scroll {
     width: 99%;
     height: 90%;
+    z-index: 100;
+    padding-left: 20px;
     overflow-y: scroll;
     overflow-x: hidden;
   }
+
 }
 
 #student-announce-image {
