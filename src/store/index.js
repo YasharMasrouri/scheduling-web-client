@@ -12,9 +12,9 @@ export default new Vuex.Store({
       lastName : "Tanha",
       id : null,
       code : 123456789,
-      password : null,
+      password : '123456',
       role : "Master",
-      userImage : "./../../assets/avatar-test.png",
+      userImage : 'http://localhost:8080/img/avatar-test.22b3981b.png',
     },
     ServerUrl : "",
 },
@@ -69,5 +69,8 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    getname(state) {
+      return state.user.firstName +  " " + state.user.lastName
+    }
   }
 })

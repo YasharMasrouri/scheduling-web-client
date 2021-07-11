@@ -1,5 +1,5 @@
 <template>
-  <v-dialog class="dialog" max-width="500px">
+  <v-dialog class="dialog" max-width="500px" v-model="dialog">
     <template v-slot:activator="{ on, attrs }">
       <v-btn
           large
@@ -16,8 +16,9 @@
     <v-card flat class="text-center pt-3">
       <v-card-text>
         <v-form>
-          <v-text-field color="#ED6038" label="name"></v-text-field>
+          <v-text-field color="#ED6038" label="name" v-model="name"></v-text-field>
           <v-btn
+              @click="saveName"
               color="#ED6038"
               class="saveBtn white--text text-capitalize "
               rounded>Save
@@ -32,7 +33,22 @@
 
 <script>
 export default {
-  name: "EditName"
+  name: "EditName",
+  data() {
+    return {
+      name : this.$store.state.user.firstName + " " + this.$store.state.user.lastName,
+      dialog : false
+    }
+  },
+  methods : {
+    saveName() {
+      //save to database
+      const name = this.name.split(' ')
+      this.$store.state.user.firstName = name[0]
+      this.$store.state.user.lastName = name[1]
+      this.dialog = false
+    }
+  }
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <v-dialog class="dialog" max-width="500px">
+  <v-dialog class="dialog" max-width="500px" v-model="dialog">
     <template v-slot:activator="{ on, attrs }">
       <v-btn
           large
@@ -20,19 +20,26 @@
           <v-text-field
               color="#ED6038"
               label="current password"
-              type="password"></v-text-field>
+              type="password"
+              v-model="oldPass"
+          ></v-text-field>
 
           <v-text-field
               color="#ED6038"
               label="new password"
-              type="password"></v-text-field>
+              type="password"
+              v-model="newPass"
+          ></v-text-field>
 
           <v-text-field
               color="#ED6038"
               label="confirm new password"
-              type="password"></v-text-field>
+              type="password"
+              v-model="newPassConfirm"
+          ></v-text-field>
 
           <v-btn
+              @click="checkNewPass"
               color="#ED6038"
               class="saveBtn white--text text-capitalize"
               rounded>Save
@@ -46,7 +53,42 @@
 
 <script>
 export default {
-  name: "EditPassword"
+  name: "EditPassword",
+  data() {
+    return {
+      dialog : false ,
+      oldPass : '',
+      newPass : '',
+      newPassConfirm : ''
+    }
+  },
+  methods : {
+    checkNewPass() {
+      if (this.newPass === this.newPassConfirm && this.oldPass === this.$store.state.user.password){
+        // make green
+        //save to database
+        this.$store.state.user.password = this.newPass
+        this.oldPass = ''
+        this.newPass = ''
+        this.newPassConfirm = ''
+        this.dialog = false
+        alert('password changed successfully')
+      }
+      else {
+        //make red
+        alert('something went wrong')
+      }
+    }
+  },
+  watch : {
+    dialog(val) {
+      if (!val) {
+        this.oldPass = ''
+        this.newPass = ''
+        this.newPassConfirm = ''
+      }
+    }
+  }
 }
 </script>
 

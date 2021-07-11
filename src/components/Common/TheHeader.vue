@@ -14,7 +14,7 @@
           </button>
         </div>
         <div id="content-info">
-          <label id="info-name">{{ name }}</label>
+          <label id="info-name">{{ getname }}</label>
           <label id="info-ID">{{ code }}</label>
         </div>
         <div id="content-image">
@@ -39,17 +39,20 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: "TheHeader",
   data() {
     return {
       code : this.$store.state.user.code,
-      name : this.$store.state.user.firstName + " " + this.$store.state.user.lastName,
       image : this.$store.state.user.userImage,
       showDropdownMenu : false,
       headerStyle : 'border : none' ,
 
     }
+  },
+  computed : {
+    ...mapGetters(['getname'])
   },
   methods : {
     gotoEdit() {
@@ -119,7 +122,6 @@ export default {
     padding: 0 30px 0 15px;
     border-radius: 0 50px 50px;
     background: #ffffff;
-    //border: 1px solid black; // or none
     border: none;
 
     #profile-content {
