@@ -13,7 +13,10 @@
         </p>
 
       </v-card-text>
-      <v-checkbox class="checkbox pa-0" color="#ED6038" v-model="course.isSelected" />
+      <!--      <v-checkbox class="checkbox pa-0" color="#ED6038" v-model="course.isSelected" />-->
+      <div class="checkDiv">
+        <input type="checkbox" id="check">
+      </div>
     </v-card>
   </div>
 </template>
@@ -36,7 +39,8 @@ export default {
 </script>
 
 <style scoped>
-.courses{
+
+.courses {
   width: 32%;
   display: grid;
   justify-content: space-around;
@@ -51,13 +55,50 @@ export default {
   position: relative;
 }
 
-.checkbox{
+.checkDiv{
+  height: 50px;
+  width: 50px;
   position: absolute;
   top: 0;
   right: 0;
-  transform: translate(+50%,-50%);
+  transform: translate(+60%, -20%);
 
 }
 
+input[type="checkbox"] {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #454141;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="checkbox"]:after {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  content: "\f00c";
+  font-size: 20px;
+  display: none;
+  color: #ffffff;
+}
+
+input[type="checkbox"]:hover {
+  background-color: #EFEFEFF4;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #ED6038;
+  border: none;
+}
+
+input[type="checkbox"]:checked:after {
+  display: block;
+}
 
 </style>
