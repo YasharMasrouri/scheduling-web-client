@@ -10,8 +10,10 @@
           4-6
         </p>
       </v-card-text>
-      <v-checkbox class="checkbox py-0 " color="#ED6038"></v-checkbox>
-
+<!--      <v-checkbox class="checkbox py-0 " color="#ED6038"></v-checkbox>-->
+      <div class="checkDiv">
+        <input type="checkbox" id="check">
+      </div>
     </v-card>
 
   </div>
@@ -41,12 +43,50 @@ export default {
 
 }
 
-.checkbox{
+.checkDiv{
+  height: 50px;
+  width: 50px;
   position: absolute;
   top: 0;
   right: 0;
-  transform: translate(+50%,-50%);
+  transform: translate(+60%, -20%);
 
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #454141;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="checkbox"]:after {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  content: "\f00c";
+  font-size: 18px;
+  display: none;
+  color: #ffffff;
+}
+
+input[type="checkbox"]:hover {
+  background-color: #EFEFEFF4;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #ED6038;
+  border: none;
+}
+
+input[type="checkbox"]:checked:after {
+  display: block;
 }
 
 </style>

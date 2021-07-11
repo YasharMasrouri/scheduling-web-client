@@ -40,6 +40,21 @@ export default {
 
 <style scoped>
 
+.courses {
+  width: 32%;
+  display: grid;
+  justify-content: space-around;
+
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #ED6038;
+  position: relative;
+}
+
 .checkDiv{
   height: 50px;
   width: 50px;
@@ -85,29 +100,5 @@ input[type="checkbox"]:checked {
 input[type="checkbox"]:checked:after {
   display: block;
 }
-
-.courses {
-  width: 32%;
-  display: grid;
-  justify-content: space-around;
-
-}
-
-.card {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  border: 1px solid #ED6038;
-  position: relative;
-}
-
-.checkbox {
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(+50%, -50%);
-
-}
-
 
 </style>
