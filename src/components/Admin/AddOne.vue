@@ -1,5 +1,5 @@
 <template>
-  <div id="add-one-container" @click="closePopUp">
+  <div id="add-one-container" >
     <div id="add-one-box">
       <form class="text-center">
         <v-text-field

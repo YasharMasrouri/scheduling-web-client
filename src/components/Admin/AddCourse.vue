@@ -1,19 +1,20 @@
 <template>
-  <div id="add-course-container" @click="closeWindow">
+  <div id="add-course-container" >
     <div id="add-course-box">
       <form class="text-center">
         <v-text-field
             color="#ED6038"
             label="Course title"
             class="headline"
-            :value="txt"
+            v-model="txt"
         ></v-text-field>
         <v-text-field
             color="#ED6038"
             label="Units"
             class="headline"
+            type="number"
         ></v-text-field>
-        <button id="add-course-btn">Add</button>
+        <button id="add-course-btn" @click="save">Add</button>
       </form>
     </div>
   </div>
@@ -30,6 +31,10 @@ export default {
   methods : {
     closeWindow() {
       this.$emit('closeWindow')
+    },
+    save(e) {
+      e.preventDefault()
+      this.$emit('saveC')
     }
   }
 }

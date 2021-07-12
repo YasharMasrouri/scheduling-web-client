@@ -14,7 +14,7 @@
 
       </v-card-text>
       <!--      <v-checkbox class="checkbox pa-0" color="#ED6038" v-model="course.isSelected" />-->
-      <div class="checkDiv">
+      <div class="checkDiv" v-if="selectable">
         <input type="checkbox" id="check">
       </div>
     </v-card>

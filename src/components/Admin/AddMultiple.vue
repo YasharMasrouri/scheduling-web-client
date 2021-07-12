@@ -1,5 +1,5 @@
 <template>
-  <div id="add-multiple-container" @click="closePopUp">
+  <div id="add-multiple-container" >
     <div id="add-multiple-box">
       <form class="text-center">
         <v-text-field

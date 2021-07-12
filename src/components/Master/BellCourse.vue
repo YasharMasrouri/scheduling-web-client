@@ -4,14 +4,13 @@
     <v-card outlined shaped class="card ma-4">
       <v-card-text class="py-1">
         <p class="text-body-1 black--text mb-0 mt-1">
-          shanbe
+          {{ day }}
         </p>
         <p class="text-body-1 mb-0 mt-1">
-          4-6
+          {{ bell }}
         </p>
       </v-card-text>
-<!--      <v-checkbox class="checkbox py-0 " color="#ED6038"></v-checkbox>-->
-      <div class="checkDiv">
+      <div class="checkDiv" v-if="selectable">
         <input type="checkbox" id="check">
       </div>
     </v-card>
@@ -22,6 +21,23 @@
 <script>
 export default {
   name: "BellCourse",
+  props: {
+    day: {
+      type: String,
+      required: true,
+      default : ''
+    },
+    bell: {
+      type: String,
+      required: true,
+      default : ''
+    },
+    selectable: {
+      type: Boolean,
+      required: false,
+      default: true
+    }
+  }
 
 }
 </script>

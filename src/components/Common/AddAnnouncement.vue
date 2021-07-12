@@ -1,7 +1,7 @@
 <template>
-  <div id="add-announcement-container" @click="closePopUp">
+  <div id="add-announcement-container" >
     <div id="add-announcement-box">
-      <button class="close-box"><i class="far fa-times-circle"></i></button>
+      <button class="close-box" @click="closePopUp"><i class="far fa-times-circle"></i></button>
       <form class="text-left">
         <v-text-field
             color="#ED6038"

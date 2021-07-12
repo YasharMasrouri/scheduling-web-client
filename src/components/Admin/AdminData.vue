@@ -6,14 +6,14 @@
       <div class="admin-data-column-content" id="admin-data-bells-content">
         <data-item v-for="bell in bells" :key="bell" @edit="editBell(bell)" @delet="deleteBell(bell)">{{ bell }}</data-item>
       </div>
-      <button class="admin-data-add-btn" @click="addDay">Add</button>
+      <button class="admin-data-add-btn" @click="addBell">Add</button>
     </div>
     <div class="admin-data-column" id="admin-data-day">
       <h3>Day</h3>
       <div class="admin-data-column-content" id="admin-data-day-content">
         <data-item v-for="day in days" :key="day" @edit="editDay(day)" @delet="deleteDay(day)">{{ day }}</data-item>
       </div>
-      <button class="admin-data-add-btn" @click="addBell" >Add</button>
+      <button class="admin-data-add-btn" @click="addDay" >Add</button>
     </div>
     <div class="admin-data-column" id="admin-data-courses">
       <h3>Courses</h3>
@@ -102,10 +102,11 @@ export default {
       this.courses.splice(num , 1)
     },
     saveDB() {
+      console.log(this.proccesing)
       // SAVE TO DATABASE
       this.IsAddDayBell = false
       if (this.proccesing === 'bell'){
-        const num = this.courses.indexOf(this.check)
+        const num = this.bells.indexOf(this.check)
         if (num > -1) {
           this.bells[num] = this.$refs.adb.txt
           this.proccesing = ''
@@ -116,7 +117,7 @@ export default {
         }
       }
       else if(this.proccesing === 'day') {
-        const num = this.courses.indexOf(this.check)
+        const num = this.days.indexOf(this.check)
         if (num > -1) {
           this.days[num] = this.$refs.adb.txt
           this.proccesing = ''
@@ -130,6 +131,7 @@ export default {
     saveC() {
       // SAVE TO DATABASE
       this.IsAddCourse = false
+      console.log(this.$refs.ac.txt)
       let num = this.courses.indexOf(this.check)
       if (num > -1) {
         this.courses[num] = this.$refs.ac.txt

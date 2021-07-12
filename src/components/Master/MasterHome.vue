@@ -1,6 +1,6 @@
 <template>
   <div id="master-home-container">
-
+<!--    <MSTable></MSTable>-->
     <div id="master-home-image"></div>
   </div>
 </template>

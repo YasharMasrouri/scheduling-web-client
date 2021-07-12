@@ -8,11 +8,11 @@ import AdminStudents from "../components/Admin/AdminStudents";
 import AdminMasters from "../components/Admin/AdminMasters";
 import MAAnnouncements from "../components/Common/MAAnnouncements";
 import MasterPage from "../components/Master/MasterPage";
-import MasterHome from "../components/Master/MasterHome";
+// import MasterHome from "../components/Master/MasterHome";
 import MasterAdaptSchedule from "../components/Master/MasterAdaptSchedule";
 import MasterSelected from "../components/Master/MasterSelected";
 import StudentPage from "../components/Student/StudentPage";
-import StudentHome from "../components/Student/StudentHome";
+// import StudentHome from "../components/Student/StudentHome";
 import StudentAnnouncements from "../components/Student/StudentAnnouncements";
 import StudentCourseSelect from "../components/Student/StudentCourseSelect";
 import StudentSelected from "../components/Student/StudentSelected";
@@ -34,7 +34,7 @@ const routes = [
     ]},
     {path: "/Master" , component: MasterPage , children:[
             {path: "" , redirect : "/Master/Home"},
-            {path: "/Master/Home" , component: MasterHome},
+            {path: "/Master/Home" , component: AdminHome},
             {path: "/Master/Announcements" , component: MAAnnouncements},
             {path: "/Master/AdaptSchedule" , component: MasterAdaptSchedule},
             {path: "/Master/SelectedSchedule" , component: MasterSelected},
@@ -42,7 +42,7 @@ const routes = [
         ]},
     {path: "/Student" , component: StudentPage , children: [
             {path: "" , redirect : "/Student/Home"},
-            {path: "/Student/Home" , component: StudentHome},
+            {path: "/Student/Home" , component: AdminHome},
             {path: "/Student/Announcements" , component: StudentAnnouncements},
             {path: "/Student/Courses" , component: StudentCourseSelect},
             {path: "/Student/SelectedCourses" , component: StudentSelected},

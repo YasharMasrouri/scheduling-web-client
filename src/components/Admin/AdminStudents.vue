@@ -99,7 +99,7 @@ export default {
         let num = this.students1.findIndex(student => student.code === this.editCode)
         if(num > -1){
           this.students1[num].code = this.$refs.addOne.code
-          this.students1[num].firstNAme = this.$refs.addOne.firstName
+          this.students1[num].firstName = this.$refs.addOne.firstName
           this.students1[num].lastName = this.$refs.addOne.lastName
           this.students1[num].password = this.$refs.addOne.password
           this.editAction = false
@@ -107,7 +107,7 @@ export default {
         else{
           num = this.masters2.findIndex(master => master.code === this.editCode)
           this.students2[num].code = this.$refs.addOne.code
-          this.students2[num].firstNAme = this.$refs.addOne.firstName
+          this.students2[num].firstName = this.$refs.addOne.firstName
           this.students2[num].lastName = this.$refs.addOne.lastName
           this.students2[num].password = this.$refs.addOne.password
           this.editAction = false

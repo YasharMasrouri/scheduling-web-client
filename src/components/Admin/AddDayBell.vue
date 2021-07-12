@@ -1,5 +1,5 @@
 <template>
-  <div id="add-day-container" @click="closeWindow">
+  <div id="add-day-container" >
     <div id="add-day-box">
       <form class="text-center">
         <v-text-field
@@ -26,7 +26,8 @@ export default {
     closeWindow() {
       this.$emit('closeWindow')
     },
-    save() {
+    save(e) {
+      e.preventDefault()
       this.$emit('saveDB')
     }
   }

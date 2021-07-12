@@ -9,14 +9,7 @@
 
         <div class="scroll pa-4">
           <v-row>
-            <BellCourse/>
-            <BellCourse/>
-            <BellCourse/>
-            <BellCourse/>
-            <BellCourse/>
-            <BellCourse/>
-            <BellCourse/>
-            <BellCourse/>
+            <bell-course v-for="bell in bells" :key="bell.bell" :day="bell.day" :bell="bell.bell" :selectable="false"></bell-course>
 
           </v-row>
         </div>
@@ -31,16 +24,7 @@
 
         <div class="scroll pa-4">
           <v-row>
-            <BellCourse/>
-            <BellCourse/>
-            <BellCourse/>
-            <BellCourse/>
-            <BellCourse/>
-            <BellCourse/>
-            <BellCourse/>
-            <BellCourse/>
-            <BellCourse/>
-            <BellCourse/>
+            <bell-course v-for="course in courses" :key="course.name" :day="course.name" :bell="course.units" :selectable="false"></bell-course>
 
           </v-row>
         </div>
@@ -56,7 +40,13 @@ import BellCourse from "./BellCourse";
 
 export default {
   name: "MasterSelected",
-  components: {BellCourse}
+  components: {BellCourse},
+  data() {
+    return {
+      courses : [{name : 'DA' , units : '5'},{name : 'DA' , units : '5'},{name : 'DA' , units : '5'},{name : 'DA' , units : '5'},{name : 'DA' , units : '5'},{name : 'DA' , units : '5'},{name : 'DA' , units : '5'}],
+      bells : [{day : "sunday" , bell : "5-6"},{day : "sunday" , bell : "5-6"},{day : "sunday" , bell : "5-6"},{day : "sunday" , bell : "5-6"},{day : "sunday" , bell : "5-6"},{day : "sunday" , bell : "5-6"}]
+    }
+  }
 }
 </script>
 
