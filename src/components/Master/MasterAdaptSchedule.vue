@@ -102,6 +102,7 @@ export default {
     padding-top: 20px;
     height: 90%;
     width: 100%;
+    flex-wrap: wrap;
   }
 
   .margin {

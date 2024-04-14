@@ -31,30 +31,30 @@ export default {
     }
   },
   beforeMount() {
-    fetch(this.$store.state.ServerUrl + "/api/Bells", {
-      method: "GET",
-    }).then(response => {
-      if (response.ok) {
-        return response.json()
-      }
-    }).then(json =>{
-      this.bells  = []
-      for (let i = 0 ; i < json.list.length ; i++) {
-        this.bells.push(json.list[i].label)
-      }
-    })
-    fetch(this.$store.state.ServerUrl + "/api/Days", {
-      method: "GET",
-    }).then(response => {
-      if (response.ok) {
-        return response.json()
-      }
-    }).then(json =>{
-      this.days  = []
-      for (let i = 0 ; i < json.list.length ; i++) {
-        this.days.push(json.list[i].label)
-      }
-    })
+    // fetch(this.$store.state.ServerUrl + "/api/Bells", {
+    //   method: "GET",
+    // }).then(response => {
+    //   if (response.ok) {
+    //     return response.json()
+    //   }
+    // }).then(json =>{
+    //   this.bells  = []
+    //   for (let i = 0 ; i < json.list.length ; i++) {
+    //     this.bells.push(json.list[i].label)
+    //   }
+    // })
+    // fetch(this.$store.state.ServerUrl + "/api/Days", {
+    //   method: "GET",
+    // }).then(response => {
+    //   if (response.ok) {
+    //     return response.json()
+    //   }
+    // }).then(json =>{
+    //   this.days  = []
+    //   for (let i = 0 ; i < json.list.length ; i++) {
+    //     this.days.push(json.list[i].label)
+    //   }
+    // })
   },
   methods : {
     showBell(day , bell) {

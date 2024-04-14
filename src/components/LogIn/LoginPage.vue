@@ -61,36 +61,48 @@ export default {
   },
   methods: {
     logIn() {
-      const sendingJson = JSON.stringify({
-        code: this.code,
-        password: this.password
-      })
-      fetch(this.$store.state.ServerUrl + "/api/Auth/Login", {
-        method: "POST",
-        body: sendingJson
-      }).then(response => {
-        if (response.ok) {
-          return response.json()
-        } else {
-          //password or code wrong
-        }
-      }).then(json => {
-        const state = {
-          token: json.token,
-          expireAt: json.expireAt,
-          user: {
-            firstName: json.user.firstName,
-            lastName: json.user.lastName,
-            id: json.user.id,
-            code: this.code,
-            password: this.password,
-            role: json.user.role,
-            userImage: json.user.image,
-          },
-        }
-        this.$store.dispatch('SetState', state)
-        this.$router.push(`/${state.user.role}/Home`)
-      })
+      if(this.code === "admin" ){
+        this.$router.push('/admin')
+        this.$store.dispatch('changeRole','admin')
+      }
+      else if(this.code === "master" ){
+        this.$router.push('/master')
+        this.$store.dispatch('changeRole','master')
+      }
+      else{
+        this.$router.push('/student')
+        this.$store.dispatch('changeRole','student')
+      }
+      // const sendingJson = JSON.stringify({
+      //   code: this.code,
+      //   password: this.password
+      // })
+      // fetch(this.$store.state.ServerUrl + "/api/Auth/Login", {
+      //   method: "POST",
+      //   body: sendingJson
+      // }).then(response => {
+      //   if (response.ok) {
+      //     return response.json()
+      //   } else {
+      //     //password or code wrong
+      //   }
+      // }).then(json => {
+      //   const state = {
+      //     token: json.token,
+      //     expireAt: json.expireAt,
+      //     user: {
+      //       firstName: json.user.firstName,
+      //       lastName: json.user.lastName,
+      //       id: json.user.id,
+      //       code: this.code,
+      //       password: this.password,
+      //       role: json.user.role,
+      //       userImage: json.user.image,
+      //     },
+      //   }
+      //   this.$store.dispatch('SetState', state)
+      //   this.$router.push(`/${state.user.role}/Home`)
+      // })
 
     }
   }

@@ -34,6 +34,9 @@ export default new Vuex.Store({
       state.user.firstName = payload.firstName
       state.user.lastName = payload.lastName
     },
+    changeRole(state, payload) {
+      state.user.role= payload
+    },
     changeImage(state, payload) {
       state.user.userImage = payload
     },
@@ -66,7 +69,10 @@ export default new Vuex.Store({
     },
     reset (context) {
       context.commit('reset')
-    }
+    },
+    changeRole(context , payload){
+      context.commit('changeRole' , payload)
+    },
   },
   getters: {
     getname(state) {

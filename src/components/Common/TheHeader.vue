@@ -61,7 +61,7 @@ export default {
     dropDownMenu() {
       if (!this.showDropdownMenu) {
         this.showDropdownMenu = true
-        this.headerStyle = 'border: 1px solid black'
+        this.headerStyle = 'box-shadow: 2px 3px 4px grey;'
       }
       else {
         this.showDropdownMenu = false
